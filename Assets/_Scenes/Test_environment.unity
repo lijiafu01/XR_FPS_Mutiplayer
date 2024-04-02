@@ -255,8 +255,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 108653226}
+  - component: {fileID: 108653227}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: RandomObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,12 +272,51 @@ Transform:
   m_GameObject: {fileID: 108653225}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.07, z: 0}
+  m_LocalPosition: {x: -24.462814, y: 11.905409, z: 12.957567}
   m_LocalScale: {x: 22, y: 22, z: 22}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 920486983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &108653227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108653225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe3c0784170f564d9c6100f685564e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToSpawn:
+  - gameObject: {fileID: 3336265371036959445, guid: ff35705ebcce28145bf9a0cbe3e2c5b9, type: 3}
+    spawnRate: 1
+  - gameObject: {fileID: 3653951977996027998, guid: c33eaf84da5e0054d8df5b0b470ff2c1, type: 3}
+    spawnRate: 1
+  - gameObject: {fileID: 703841685803613030, guid: 6a004793562a19f43ac122fdb2282a39, type: 3}
+    spawnRate: 1
+  - gameObject: {fileID: 6040575437476789316, guid: eeac8795623b0294ea6aeadcccc9441e, type: 3}
+    spawnRate: 1
+  - gameObject: {fileID: 6940521950212138947, guid: 802a367ac87bb7c49835ffcfd2ed3667, type: 3}
+    spawnRate: 0.1
+  - gameObject: {fileID: 1780565174973028021, guid: 6031cfd73cf92ce4eb90ffd65c831f7f, type: 3}
+    spawnRate: 0.1
+  - gameObject: {fileID: 1929864421062854946, guid: ec36eaaa7dc9a2d4db3a5237e2f6e5c5, type: 3}
+    spawnRate: 0.1
+  - gameObject: {fileID: 5018824382115904892, guid: 5c92d978cf3808442b13dba749a61542, type: 3}
+    spawnRate: 0.1
+  - gameObject: {fileID: 2285349470371064103, guid: fa154549441afa443ae29bffd7b50b4d, type: 3}
+    spawnRate: 0.2
+  - gameObject: {fileID: 8528808512284540657, guid: 5891797116ad1154fa43c10e3f0b37c2, type: 3}
+    spawnRate: 0.2
+  - gameObject: {fileID: 1581122498478872911, guid: c5bc79380a36abc438f028573cbdb590, type: 3}
+    spawnRate: 0.1
+  width: 270
+  depth: 270
+  spawnCount: 3000
+  scaleRange: {x: 0.5, y: 3}
 --- !u!1 &259431389
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,8 +519,8 @@ Transform:
   m_GameObject: {fileID: 267673044}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.0466323, y: -0.29050303, z: 1.5990534}
-  m_LocalScale: {x: 22, y: 1, z: 22}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 33, y: 1, z: 33}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -664,6 +704,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 488160, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
   m_PrefabInstance: {fileID: 266229104}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &920486982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 920486983}
+  m_Layer: 0
+  m_Name: Environment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &920486983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920486982}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 24.462814, y: -11.835409, z: -12.957567}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 108653226}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1034432393 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 481164, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
@@ -901,7 +973,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.7706857, b: 0.14528298, a: 1}
+  m_Color: {r: 0.9811321, g: 0.79742247, b: 0.2906372, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -975,5 +1047,5 @@ SceneRoots:
   - {fileID: 2123123101}
   - {fileID: 462411255}
   - {fileID: 1730868214}
-  - {fileID: 108653226}
   - {fileID: 267673048}
+  - {fileID: 920486983}
