@@ -54,7 +54,10 @@ public class RandomEnvironmentSpawner : MonoBehaviour
         Quaternion spawnRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
         float scale = Random.Range(scaleRange.x, scaleRange.y);
 
-        GameObject spawnedObject = Instantiate(spawnableObject.gameObject, spawnPosition, spawnRotation);
+        GameObject spawnedObject = Instantiate(spawnableObject.gameObject, spawnPosition, spawnRotation,this.transform);
         spawnedObject.transform.localScale = new Vector3(scale, scale, scale);
+        //spawnableObject.gameObject.transform.SetParent(this.gameObject.transform);
+
+
     }
 }

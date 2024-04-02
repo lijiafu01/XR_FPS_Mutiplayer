@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5647797421611634068}
-  - component: {fileID: 8714754706545703821}
+  - component: {fileID: -8693838914491657402}
   m_Layer: 0
   m_Name: cactus02_m
   m_TagString: evr
@@ -33,8 +33,8 @@ Transform:
   - {fileID: 3548307415026688228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &8714754706545703821
-MeshCollider:
+--- !u!65 &-8693838914491657402
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -48,13 +48,12 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8995908489495289967
 GameObject:
   m_ObjectHideFlags: 0
