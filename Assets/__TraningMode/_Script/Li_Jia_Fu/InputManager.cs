@@ -74,7 +74,15 @@ public class InputManager : MonoBehaviour
     }
     public bool GetTriggerPressed()
     {
-        // Giả sử bạn sử dụng Axis 9 cho trigger
-        return Input.GetAxis("Axis 9") > 0.1f; // Thay đổi 0.1f với giá trị ngưỡng phù hợp
+        // Lấy giá trị nút trigger bên trái
+        float leftTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch);
+
+        // Lấy giá trị nút trigger bên phải
+        float rightTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch);
+
+        // Kiểm tra xem có nút trigger nào được nhấn qua một ngưỡng nhất định không
+        // Ví dụ, sử dụng ngưỡng 0.1f để coi như là nhấn nút
+        return leftTrigger > 0.1f || rightTrigger > 0.1f;
     }
+
 }
