@@ -23,7 +23,10 @@ public class InputManager : MonoBehaviour
     {
         // Check the inputs each frame
         CheckControllerInputs();
+
+        
     }
+    
 
     private void CheckControllerInputs()
     {
