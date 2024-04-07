@@ -1,24 +1,24 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttack : AttackBehaviour
 {
-    public GameObject a;
-    public GameObject b;
-    private void Update()
+    [SerializeField]
+    private WeaponBehaviour equippedWeapon;
+    protected override void Start()
     {
-        a.transform.position = b.transform.position;
-        // Gọi phương thức từ InputManager để kiểm tra nếu nút trigger được nhấn
+    }
+    protected override void Update()
+    {
         if (InputManager.Instance.GetTriggerPressed())
         {
-            Debug.Log("Người chơi tấn công");
+            Debug.Log("dev_Người chơi tấn công");
             Attack();
         }
     }
-    private void Attack()
+    protected override void Attack()
     {
-        // Xử lý logic tấn công ở đây
+        equippedWeapon.Fire();
     }
 }
-*/

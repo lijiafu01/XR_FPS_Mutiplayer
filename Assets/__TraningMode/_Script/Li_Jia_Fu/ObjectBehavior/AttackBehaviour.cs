@@ -1,0 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class AttackBehaviour : MonoBehaviour
+{
+    
+    protected virtual void Start() { }
+
+    protected virtual void Update() { }
+
+    protected virtual void LateUpdate() { }
+
+    protected abstract void Attack();
+}

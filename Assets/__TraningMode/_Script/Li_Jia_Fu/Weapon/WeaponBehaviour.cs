@@ -1,10 +1,12 @@
-// Copyright 2021, Infima Games. All Rights Reserved.
+﻿// Copyright 2021, Infima Games. All Rights Reserved.
 
 using UnityEngine;
 
 
 public abstract class WeaponBehaviour : MonoBehaviour
 {
+    protected float fireRate = 2f; // Súng có thể bắn mỗi 2 giây một lần.
+    protected float nextFireTime = 0f;
     #region UNITY
 
     /// <summary>
@@ -28,20 +30,9 @@ public abstract class WeaponBehaviour : MonoBehaviour
     protected virtual void LateUpdate() { }
 
     #endregion
-    #region METHODS
-
-   
+    #region METHODS 
     public abstract void Fire();
-    /// <summary>
-    /// Reloads the weapon.
-    /// </summary>
     public abstract void Reload();
-
-    /// <summary>
-    /// Fills the character's equipped weapon's ammunition by a certain amount, or fully if set to -1.
-    /// </summary>
     public abstract void FillAmmunition(int amount);
-
-    
     #endregion
 }

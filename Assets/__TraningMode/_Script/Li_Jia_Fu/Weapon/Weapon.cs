@@ -24,7 +24,7 @@ public class Weapon : WeaponBehaviour
     }
     public override void Fire()
     {
-        
+        Debug.Log("da ban 1 vien dan");
     }
     public override void FillAmmunition(int amount)
     {
