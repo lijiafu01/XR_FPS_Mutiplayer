@@ -11,12 +11,12 @@ public class PlayerAttack : AttackBehaviour
     }
     protected override void Update()
     {
-        /*if (InputManager.Instance.GetTriggerPressed())
+        if (InputManager.Instance.GetTriggerPressed())
         {
             Debug.Log("dev_Người chơi tấn công");
             Attack();
-        }*/
-        if(InputManager.Instance.GetRightGripReleased())
+        }
+        /*if (InputManager.Instance.GetRightGripReleased())
         {
             Debug.Log("dev_Người chơi ném lựu đạn");
             Attack();
@@ -25,7 +25,7 @@ public class PlayerAttack : AttackBehaviour
         if(InputManager.Instance.IsRightGripPressed()) 
         {
             Debug.Log("dev_nhan nut grip");
-        }
+        }*/
     }
     protected override void Attack()
     {

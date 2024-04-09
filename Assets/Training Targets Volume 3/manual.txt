@@ -1,0 +1,4 @@
+All props are set in the prefabs.
+All you need to do is to add the prefab to the scene.
+You also need to set the transitions between animation clips for animated prefabs. The animation clips were already added to Animator.
+Also you will find a double side version of a Standard shader in the pack.

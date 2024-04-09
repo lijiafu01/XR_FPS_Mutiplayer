@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: 04269e7d70e9a4d0fbe241aa749eeb2a
+timeCreated: 1539013344
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: be_l_cloth04
+    100002: be_r_cloth04
+    100004: bind_l_chest01
+    100006: bind_l_cloth01
+    100008: bind_l_cloth02
+    100010: bind_l_cloth03
+    100012: bind_r_cloth01
+    100014: bind_r_cloth02
+    100016: bind_r_cloth03
+    100018: bind_scarecrowRoot01
+    100020: Mod_Scarecrow_LODs
+    100022: //RootNode
+    100024: scarecrow_LOD0
+    100026: scarecrow_LOD1
+    400000: be_l_cloth04
+    400002: be_r_cloth04
+    400004: bind_l_chest01
+    400006: bind_l_cloth01
+    400008: bind_l_cloth02
+    400010: bind_l_cloth03
+    400012: bind_r_cloth01
+    400014: bind_r_cloth02
+    400016: bind_r_cloth03
+    400018: bind_scarecrowRoot01
+    400020: Mod_Scarecrow_LODs
+    400022: //RootNode
+    400024: scarecrow_LOD0
+    400026: scarecrow_LOD1
+    4300000: scarecrow_LOD0
+    4300002: scarecrow_LOD1
+    7400000: idle
+    9500000: //RootNode
+    13700000: scarecrow_LOD0
+    13700002: scarecrow_LOD1
+    20500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bind_scarecrowRoot01
+        weight: 1
+      - path: bind_scarecrowRoot01/bind_l_chest01
+        weight: 1
+      - path: bind_scarecrowRoot01/bind_l_chest01/bind_l_cloth01
+        weight: 1
+      - path: bind_scarecrowRoot01/bind_l_chest01/bind_l_cloth01/bind_l_cloth02
+        weight: 1
+      - path: bind_scarecrowRoot01/bind_l_chest01/bind_l_cloth01/bind_l_cloth02/bind_l_cloth03
+        weight: 1
+      - path: bind_scarecrowRoot01/bind_l_chest01/bind_l_cloth01/bind_l_cloth02/bind_l_cloth03/be_l_cloth04
+        weight: 1
+      - path: bind_scarecrowRoot01/bind_l_chest01/bind_r_cloth01
+        weight: 1
+      - path: bind_scarecrowRoot01/bind_l_chest01/bind_r_cloth01/bind_r_cloth02
+        weight: 1
+      - path: bind_scarecrowRoot01/bind_l_chest01/bind_r_cloth01/bind_r_cloth02/bind_r_cloth03
+        weight: 1
+      - path: bind_scarecrowRoot01/bind_l_chest01/bind_r_cloth01/bind_r_cloth02/bind_r_cloth03/be_r_cloth04
+        weight: 1
+      - path: Mod_Scarecrow_LODs
+        weight: 1
+      - path: Mod_Scarecrow_LODs/scarecrow_LOD0
+        weight: 1
+      - path: Mod_Scarecrow_LODs/scarecrow_LOD1
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 0
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 695e63cf51bb7a8458dd69ada0cadcea,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

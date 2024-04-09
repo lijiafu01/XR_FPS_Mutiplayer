@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: 4217e0b27bd0f4155915af05314c1c0a
+timeCreated: 1539013344
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bind_body01
+    100002: bind_head01
+    100004: bind_l_hand01
+    100006: bind_l_rope01
+    100008: bind_l_shoulder01
+    100010: bind_r_hand01
+    100012: bind_r_rope01
+    100014: bind_r_shoulder01
+    100016: bind_root01
+    100018: //RootNode
+    100020: dummyBeast_LOD0
+    100022: dummyBeast_LOD1
+    100024: Mod_DummyBeast_LODs
+    400000: bind_body01
+    400002: bind_head01
+    400004: bind_l_hand01
+    400006: bind_l_rope01
+    400008: bind_l_shoulder01
+    400010: bind_r_hand01
+    400012: bind_r_rope01
+    400014: bind_r_shoulder01
+    400016: bind_root01
+    400018: //RootNode
+    400020: dummyBeast_LOD0
+    400022: dummyBeast_LOD1
+    400024: Mod_DummyBeast_LODs
+    4300000: dummyBeast_LOD0
+    4300002: dummyBeast_LOD1
+    7400000: idle
+    9500000: //RootNode
+    13700000: dummyBeast_LOD0
+    13700002: dummyBeast_LOD1
+    20500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bind_root01
+        weight: 1
+      - path: bind_root01/bind_body01
+        weight: 1
+      - path: bind_root01/bind_body01/bind_head01
+        weight: 1
+      - path: bind_root01/bind_body01/bind_l_shoulder01
+        weight: 1
+      - path: bind_root01/bind_body01/bind_l_shoulder01/bind_l_rope01
+        weight: 1
+      - path: bind_root01/bind_body01/bind_l_shoulder01/bind_l_rope01/bind_l_hand01
+        weight: 1
+      - path: bind_root01/bind_body01/bind_r_shoulder01
+        weight: 1
+      - path: bind_root01/bind_body01/bind_r_shoulder01/bind_r_rope01
+        weight: 1
+      - path: bind_root01/bind_body01/bind_r_shoulder01/bind_r_rope01/bind_r_hand01
+        weight: 1
+      - path: Mod_DummyBeast_LODs
+        weight: 1
+      - path: Mod_DummyBeast_LODs/dummyBeast_LOD0
+        weight: 1
+      - path: Mod_DummyBeast_LODs/dummyBeast_LOD1
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 0
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: af32927deed66c846879123cd106e734,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
