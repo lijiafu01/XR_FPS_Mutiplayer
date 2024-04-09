@@ -7,6 +7,7 @@ TagManager:
   - evr
   - player
   - bullet
+  - target
   layers:
   - Default
   - TransparentFX

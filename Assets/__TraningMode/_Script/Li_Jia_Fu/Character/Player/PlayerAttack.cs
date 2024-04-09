@@ -19,12 +19,13 @@ public class PlayerAttack : AttackBehaviour
         /*if (InputManager.Instance.GetRightGripReleased())
         {
             Debug.Log("dev_Người chơi ném lựu đạn");
-            Attack();
             
+
         }
-        if(InputManager.Instance.IsRightGripPressed()) 
+        if (InputManager.Instance.IsRightGripPressed())
         {
             Debug.Log("dev_nhan nut grip");
+            Attack();
         }*/
     }
     protected override void Attack()
