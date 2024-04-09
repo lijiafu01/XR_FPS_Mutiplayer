@@ -23,11 +23,34 @@ public class InputManager : MonoBehaviour
     {
         // Check the inputs each frame
         CheckControllerInputs();
+        GetRightGripReleased();
 
-        
+
     }
-    
 
+    // Thêm phương thức mới để lấy lực vung của controller
+    public Vector3 GetControllerVelocity(bool isRightHand)
+    {
+        OVRInput.Controller controller = isRightHand ? OVRInput.Controller.RTouch : OVRInput.Controller.LTouch;
+        return OVRInput.GetLocalControllerVelocity(controller);
+    }
+
+    public Vector3 GetControllerAngularVelocity(bool isRightHand)
+    {
+        OVRInput.Controller controller = isRightHand ? OVRInput.Controller.RTouch : OVRInput.Controller.LTouch;
+        return OVRInput.GetLocalControllerAngularVelocity(controller);
+    }
+    // Phương thức mới để kiểm tra nút Grip phải
+    public bool IsRightGripPressed()
+    {
+        // Sử dụng OVRInput từ Oculus SDK để kiểm tra nút Grip phải
+        return OVRInput.Get(OVRInput.RawButton.RHandTrigger);
+    }
+    public bool GetRightGripReleased()
+    {
+        // Trả về true nếu nút Grip phải được thả
+        return OVRInput.GetUp(OVRInput.Button.SecondaryHandTrigger);
+    }
     private void CheckControllerInputs()
     {
         // Check for button presses
