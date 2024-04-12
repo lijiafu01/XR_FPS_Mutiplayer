@@ -17,8 +17,6 @@ public class Pistol : WeaponBehaviour
     {
 
     }
-
-
     public override void Reload()
     {
 
@@ -27,7 +25,8 @@ public class Pistol : WeaponBehaviour
     {
         if (Time.time >= nextFireTime)
         {
-            GameObject bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
+            //GameObject bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
+            GameObject bullet = ObjectPoolManager.Instance.SpawnFromPool("pistolbullet",muzzle.position,muzzle.rotation);
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             rb.AddForce(muzzle.forward * shootForce);
             nextFireTime = Time.time + 1f / fireRate; // Cập nhật thời gian bắn tiếp theo dựa trên fireRate

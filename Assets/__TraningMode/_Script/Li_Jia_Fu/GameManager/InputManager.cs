@@ -4,7 +4,6 @@ public class InputManager : MonoBehaviour
 {
     // Singleton instance
     public static InputManager Instance { get; private set; }
-
     private void Awake()
     {
         // Implement Singleton pattern
@@ -18,7 +17,6 @@ public class InputManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-
     private void Update()
     {
         // Check the inputs each frame

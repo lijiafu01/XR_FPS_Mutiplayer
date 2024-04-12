@@ -31,10 +31,6 @@ public class ExplosionGrenade : MonoBehaviour
 
     void PerformSphereCast()
     {
-        RaycastHit[] hits;
-        // Tính vị trí bắt đầu của SphereCast
-        Vector3 castOrigin = transform.position;
-
         // Tạo một hình cầu ảo tại vị trí hiện tại của GameObject với bán kính nhất định
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 5f);
         foreach (var hitCollider in hitColliders)
@@ -46,7 +42,6 @@ public class ExplosionGrenade : MonoBehaviour
                 UIController.Instance.ShowScore(1);
             }
         }
-
        Destroy(gameObject);
     }
     

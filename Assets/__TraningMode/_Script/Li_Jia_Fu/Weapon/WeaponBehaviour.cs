@@ -1,11 +1,7 @@
-﻿// Copyright 2021, Infima Games. All Rights Reserved.
-
-using UnityEngine;
-
-
+﻿using UnityEngine;
 public abstract class WeaponBehaviour : MonoBehaviour
 {
-    protected float fireRate = 2f; // Súng có thể bắn mỗi 2 giây một lần.
+    protected float fireRate = 2f;
     protected float nextFireTime = 0f;
     #region UNITY
 
