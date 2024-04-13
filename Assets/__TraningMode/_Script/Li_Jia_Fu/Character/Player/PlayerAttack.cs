@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,32 +9,23 @@ public class PlayerAttack : AttackBehaviour
     private WeaponBehaviour equippedWeapon;
     protected override void Start()
     {
+        equippedWeapon = PlayerController.Instance.PlayerWeapon.WeaponBehaviour;
     }
+   
     protected override void Update()
     {
-        //CheckPlayerInput();
+        Attack();
+        Reload();
     }
-    /*protected override void CheckPlayerInput()
-    {
-        if (InputManager.Instance.GetTriggerPressed())
-        {
-            Debug.Log("dev_Người chơi tấn công");
-            Attack();
-        }
-        if (InputManager.Instance.GetRightGripReleased())
-        {
-            Debug.Log("dev_Người chơi ném lựu đạn");
-
-
-        }
-        if (InputManager.Instance.IsRightGripPressed())
-        {
-            Debug.Log("dev_nhan nut grip");
-            Attack();
-        }
-    }*/
     protected override void Attack()
     {
+        if (equippedWeapon == null) return;
         equippedWeapon.Fire();
+    }
+
+    protected override void Reload()
+    {
+        if (equippedWeapon == null) return;
+        equippedWeapon.Reload();
     }
 }

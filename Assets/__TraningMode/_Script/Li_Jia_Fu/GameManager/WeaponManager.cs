@@ -1,39 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-[System.Serializable]
-public class WeaponData
+public enum Weapon
 {
-    public Weapon weaponType;  // Enum cho loại vũ khí
-    public GameObject weaponObject;  // GameObject của vũ khí
+    Pistol,
+    Grenade
 }
-
 public class WeaponManager : MonoBehaviour
 {
-    [SerializeField] private List<WeaponData> playerWeapons = new List<WeaponData>();
 
-    private void Start()
+    [SerializeField]  private Weapon _currentWeapon;
+    public WeaponBehaviour WeaponBehaviour;
+    public static WeaponManager Instance { get; private set; }
+    private void Awake()
     {
-        SetPlayerWeapon();
-    }
-
-    private void SetPlayerWeapon()
-    {
-        Weapon currentWeapon = GameManager.Instance.currentWeapon; // Giả sử GameManager lưu trạng thái vũ khí hiện tại
-
-        foreach (WeaponData weaponData in playerWeapons)
+        // Implement Singleton pattern
+        if (Instance != null && Instance != this)
         {
-            // Kích hoạt GameObject nếu loại vũ khí khớp
-            if (weaponData.weaponType == currentWeapon)
-            {
-                weaponData.weaponObject.SetActive(true);
-                Debug.Log("Activated weapon: " + weaponData.weaponObject.name);
-            }
-            else
-            {
-                weaponData.weaponObject.SetActive(false);
-            }
+            Destroy(gameObject);
         }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+    public Weapon CurrentWeapon
+    {
+        get { return _currentWeapon; }
+        private set { _currentWeapon = value; }
     }
 }

@@ -21,10 +21,12 @@ public class Pistol : WeaponBehaviour
     }
     public override void Reload()
     {
-
+        if (!InputManager.Instance.IsRightGripPressed()) return;
+        Debug.Log("dev Reload pistols");
     }
     public override void Fire()
     {
+        if (!InputManager.Instance.GetTriggerPressed()) return;
         if (Time.time >= nextFireTime)
         {
             //GameObject bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);

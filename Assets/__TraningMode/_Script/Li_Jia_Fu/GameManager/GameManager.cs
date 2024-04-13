@@ -1,14 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum Weapon
-{
-    Pistol,
-    Grenade
-}
+
 public class GameManager : MonoBehaviour
 {
-    public Weapon currentWeapon;
     public static GameManager Instance { get; private set; }
     private void Awake()
     { 
@@ -23,4 +18,5 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+   
 }

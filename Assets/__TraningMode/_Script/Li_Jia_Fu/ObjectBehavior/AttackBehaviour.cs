@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class AttackBehaviour : MonoBehaviour
 {
-    
     protected virtual void Start() { }
 
     protected virtual void Update() { }
@@ -12,4 +11,5 @@ public abstract class AttackBehaviour : MonoBehaviour
     protected virtual void LateUpdate() { }
 
     protected abstract void Attack();
+    protected abstract void Reload();
 }
