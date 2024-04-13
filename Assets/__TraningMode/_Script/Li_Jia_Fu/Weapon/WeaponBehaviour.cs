@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 public abstract class WeaponBehaviour : MonoBehaviour
 {
-    protected float fireRate = 2f;
-    protected float nextFireTime = 0f;
+    
     #region UNITY
 
     /// <summary>

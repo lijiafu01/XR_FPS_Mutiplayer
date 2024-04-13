@@ -2,12 +2,14 @@
 
 public class Pistol : WeaponBehaviour
 {
-    [SerializeField] private GameObject smokeEffectPrefab;
-
-    public GameObject bulletPrefab;
-    public Transform muzzle;
-    public float shootForce=800f;
     
+    [SerializeField] private float fireRate = 2f;
+    [SerializeField] private float nextFireTime = 0f;
+    [SerializeField] private Transform muzzle;
+    [SerializeField] private float shootForce = 800f;
+    [SerializeField] private GameObject smokeEffectPrefab;
+    [SerializeField] private GameObject bulletPrefab;
+
 
     protected override void Awake()
     {
@@ -27,10 +29,11 @@ public class Pistol : WeaponBehaviour
         {
             //GameObject bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
             GameObject bullet = ObjectPoolManager.Instance.SpawnFromPool("pistolbullet",muzzle.position,muzzle.rotation);
+
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             rb.AddForce(muzzle.forward * shootForce);
+
             nextFireTime = Time.time + 1f / fireRate; // Cập nhật thời gian bắn tiếp theo dựa trên fireRate
-            Debug.Log("Đã bắn 1 viên đạn");
 
             if (smokeEffectPrefab != null)
             {

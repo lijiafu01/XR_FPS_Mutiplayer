@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    private void OnEnable()
     {
-        
+        Invoke("ReturnObjectPool", 5f);
     }
-
-    // Update is called once per frame
-    void Update()
+    private void ReturnObjectPool()
     {
-        
+        ObjectPoolManager.Instance.ReturnToPool("pistolbullet", transform.gameObject);
     }
 }

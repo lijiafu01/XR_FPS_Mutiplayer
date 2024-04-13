@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
-
+public enum ControllerHand
+{
+    Left,
+    Right
+}
 public class InputManager : MonoBehaviour
 {
     // Singleton instance
@@ -26,6 +30,20 @@ public class InputManager : MonoBehaviour
 
     }
 
+    
+    public Vector3 GetControllerPosition(ControllerHand hand)
+    {
+        if (hand == ControllerHand.Right)
+        {
+            Vector3 rightControllerPosition = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
+            return rightControllerPosition;
+        }
+        else
+        {
+            Vector3 leftControllerPosition = OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch);
+            return leftControllerPosition;
+        }
+    }
     // Thêm phương thức mới để lấy lực vung của controller
     public Vector3 GetControllerVelocity(bool isRightHand)
     {
