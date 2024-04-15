@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerAttack : AttackBehaviour
 {
-    [SerializeField]
     private WeaponBehaviour equippedWeapon;
     protected override void Start()
     {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -818,7 +818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &839816522
 Light:
   m_ObjectHideFlags: 0
@@ -1179,7 +1179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1623034369
 Transform:
   m_ObjectHideFlags: 0
@@ -1428,9 +1428,9 @@ MonoBehaviour:
   - tag: pistolbullet
     prefab: {fileID: 5304055121516845748, guid: 66debc95b64e1f845a8112a7415b3764, type: 3}
     size: 3
-  - tag: 
-    prefab: {fileID: 0}
-    size: 0
+  - tag: pistolmuzzleflash
+    prefab: {fileID: 3761728480313762264, guid: 384bb4df9b7f2a94190862f786f84d26, type: 3}
+    size: 3
   - tag: 
     prefab: {fileID: 0}
     size: 0
@@ -2563,7 +2563,7 @@ MonoBehaviour:
   bodyTransforn: {fileID: 6647729876801067303}
   excludeLayers:
     serializedVersion: 2
-    m_Bits: 38
+    m_Bits: 6
   angle: 45
   strength: 10
 --- !u!1 &1125233672586706276
@@ -2711,8 +2711,7 @@ MonoBehaviour:
   fireRate: 5
   nextFireTime: 0
   muzzle: {fileID: 5849585126478297874}
-  shootForce: 500
-  smokeEffectPrefab: {fileID: 3205622823624473012, guid: 07ffe0709cddca84384b3d66ea5ba85b, type: 3}
+  shootForce: 5000
   bulletPrefab: {fileID: 5304055121516845748, guid: 66debc95b64e1f845a8112a7415b3764, type: 3}
 --- !u!1 &1277071223729267119
 GameObject:
@@ -8222,7 +8221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ddf471266a6d894f82cac1a8909c04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equippedWeapon: {fileID: 0}
 --- !u!1 &4530057526101492862
 GameObject:
   m_ObjectHideFlags: 0

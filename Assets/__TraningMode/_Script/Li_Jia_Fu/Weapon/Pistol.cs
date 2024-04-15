@@ -7,7 +7,6 @@ public class Pistol : WeaponBehaviour
     [SerializeField] private float nextFireTime = 0f;
     [SerializeField] private Transform muzzle;
     [SerializeField] private float shootForce = 800f;
-    [SerializeField] private GameObject smokeEffectPrefab;
     [SerializeField] private GameObject bulletPrefab;
 
 
@@ -37,11 +36,23 @@ public class Pistol : WeaponBehaviour
 
             nextFireTime = Time.time + 1f / fireRate; // Cập nhật thời gian bắn tiếp theo dựa trên fireRate
 
-            if (smokeEffectPrefab != null)
+            GameObject hitVFXInstance = ObjectPoolManager.Instance.SpawnFromPool("pistolmuzzleflash", muzzle.position, muzzle.rotation);
+
+            // Tìm và kích hoạt ParticleSystem trên bản sao hitVFX
+            ParticleSystem ps = hitVFXInstance.GetComponent<ParticleSystem>();
+            if (ps != null)
             {
-                GameObject muzzleFlash = Instantiate(smokeEffectPrefab, muzzle.position, muzzle.rotation);
-                Destroy(muzzleFlash,0.2f);
+                ps.Play();
             }
+            else
+            {
+                // Trong trường hợp ParticleSystem nằm trong một child GameObject của hitVFXInstance
+                ps = hitVFXInstance.GetComponentInChildren<ParticleSystem>();
+                if (ps != null) ps.Play();
+            }
+
+           
+
         }
     }
     public override void FillAmmunition(int amount)
