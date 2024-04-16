@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class DummyTarget : MonoBehaviour
 {
     public Animator anim;
     public int enemyHP;
@@ -14,7 +14,8 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "bullet")
         {
 
-
+            TrainingMission trainingMission = transform.GetComponentInParent<TrainingMission>();
+            trainingMission.UpdateMissionProgress(1);
 
             UIController.Instance.ShowScore(1);
             anim.SetTrigger("hit");

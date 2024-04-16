@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class WeaponData
 {
-    public Weapon weaponType;  // Enum cho loại vũ khí
+    public WeaponType weaponType;  // Enum cho loại vũ khí
     public GameObject weaponObject;  // GameObject của vũ khí
 }
 public class PlayerWeapon : MonoBehaviour
@@ -19,7 +19,7 @@ public class PlayerWeapon : MonoBehaviour
     private void SetPlayerWeapon()
     {
 
-        Weapon currentWeapon = WeaponManager.Instance.CurrentWeapon;
+        WeaponType currentWeapon = WeaponManager.Instance.CurrentWeapon;
         foreach (WeaponData weaponData in playerWeapons)
         {
             // Kích hoạt GameObject nếu loại vũ khí khớp

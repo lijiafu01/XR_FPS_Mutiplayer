@@ -50,9 +50,6 @@ public class Pistol : WeaponBehaviour
                 ps = hitVFXInstance.GetComponentInChildren<ParticleSystem>();
                 if (ps != null) ps.Play();
             }
-
-           
-
         }
     }
     public override void FillAmmunition(int amount)
