@@ -30,7 +30,6 @@ public class VFXReturnObjectPool : MonoBehaviour
         {
             if (ps.IsAlive(true))  // true để kiểm tra các hạt con
             {
-                Debug.Log("ParticleSystem still active: " + ps.gameObject.name);
                 return false;  // Nếu bất kỳ ParticleSystem nào vẫn còn hoạt động
             }
         }

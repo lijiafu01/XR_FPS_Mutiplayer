@@ -18,6 +18,10 @@ public class Pistol : WeaponBehaviour
     {
 
     }
+    protected override void Update()
+    {
+        Debug.DrawRay(muzzle.position, muzzle.forward * 30, Color.red);
+    }
     public override void Reload()
     {
         if (!InputManager.Instance.IsRightGripPressed()) return;

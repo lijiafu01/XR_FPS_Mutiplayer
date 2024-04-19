@@ -38,12 +38,9 @@ public class WeaponTraining : MonoBehaviour
     {
         
         TrainingMission mission = missions.Find(m => m.missionId == missionId && m.isActive);
-        Debug.Log("dev 1");
         if (mission != null)
         {
-            Debug.Log("dev 2");
             mission.CompleteMission();
-            Debug.Log("dev 3");
             completedMissionsCount++;
             if (completedMissionsCount == totalMissionsCount)
             {
@@ -51,7 +48,7 @@ public class WeaponTraining : MonoBehaviour
             }
             else
             {
-                StartNextMission();
+                Invoke("StartNextMission", 1f);
             }
         }
     }

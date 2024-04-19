@@ -15,16 +15,13 @@ public class TrainingMission : MonoBehaviour
     }
     public void UpdateMissionProgress(int hitTargetNum = 1)
     {
-        
         _hitTargetNum += hitTargetNum;
-        Debug.Log("dev "+_hitTargetNum);
         if (_hitTargetNum == targetTotal)
         {
-            
             WeaponTraining weaponTraining = transform.GetComponentInParent<WeaponTraining>();
             weaponTraining.CompleteMission(missionId);
-            Debug.Log("dev next ");
         }
+        UIController.Instance.ShowMissionProgress(targetTotal, 1);
     }
     public void StartMission()
     {

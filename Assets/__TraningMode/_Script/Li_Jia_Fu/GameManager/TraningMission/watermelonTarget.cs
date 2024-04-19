@@ -91,7 +91,7 @@ public class watermelonTarget : MonoBehaviour
             TrainingMission trainingMission = transform.GetComponentInParent<TrainingMission>();
             trainingMission.UpdateMissionProgress(1);
 
-            UIController.Instance.ShowMissionProgress(trainingMission.targetTotal,1);
+            
             anim.SetTrigger("hit");
 
             // Tạo hitVFX tại điểm va chạm

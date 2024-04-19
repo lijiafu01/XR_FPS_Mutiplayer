@@ -435,7 +435,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5942394885175409737, guid: 35f69d1dd4ae155439014693fb795f3a, type: 3}
+      propertyPath: isMoving
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942394885175409737, guid: 35f69d1dd4ae155439014693fb795f3a, type: 3}
       propertyPath: isRotating
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942394885175409737, guid: 35f69d1dd4ae155439014693fb795f3a, type: 3}
+      propertyPath: isMovingAndRotating
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -955,7 +963,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5942394885175409737, guid: 35f69d1dd4ae155439014693fb795f3a, type: 3}
+      propertyPath: isMoving
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942394885175409737, guid: 35f69d1dd4ae155439014693fb795f3a, type: 3}
       propertyPath: isRotating
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942394885175409737, guid: 35f69d1dd4ae155439014693fb795f3a, type: 3}
+      propertyPath: isMovingAndRotating
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1954,7 +1970,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5942394885175409737, guid: 35f69d1dd4ae155439014693fb795f3a, type: 3}
+      propertyPath: isMoving
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942394885175409737, guid: 35f69d1dd4ae155439014693fb795f3a, type: 3}
       propertyPath: isRotating
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942394885175409737, guid: 35f69d1dd4ae155439014693fb795f3a, type: 3}
+      propertyPath: isMovingAndRotating
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2465,7 +2489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1825934296
 Transform:
   m_ObjectHideFlags: 0
@@ -2575,13 +2599,10 @@ MonoBehaviour:
   pools:
   - tag: pistolbullet
     prefab: {fileID: 5304055121516845748, guid: 66debc95b64e1f845a8112a7415b3764, type: 3}
-    size: 10
+    size: 50
   - tag: pistolmuzzleflash
     prefab: {fileID: 3761728480313762264, guid: 384bb4df9b7f2a94190862f786f84d26, type: 3}
-    size: 10
-  - tag: 
-    prefab: {fileID: 0}
-    size: 0
+    size: 50
 --- !u!4 &1871822412
 Transform:
   m_ObjectHideFlags: 0
@@ -3545,7 +3566,7 @@ MonoBehaviour:
   fireRate: 3
   nextFireTime: 0
   muzzle: {fileID: 5849585126478297874}
-  shootForce: 3000
+  shootForce: 5000
   bulletPrefab: {fileID: 5304055121516845748, guid: 66debc95b64e1f845a8112a7415b3764, type: 3}
 --- !u!1 &1288183727272826664
 GameObject:
@@ -6166,10 +6187,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: watermelonTarget
       objectReference: {fileID: 0}
-    - target: {fileID: 2612945237241002239, guid: 35f69d1dd4ae155439014693fb795f3a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5468633971271525500, guid: 35f69d1dd4ae155439014693fb795f3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6208,6 +6225,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468633971271525500, guid: 35f69d1dd4ae155439014693fb795f3a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875903044181173250, guid: 35f69d1dd4ae155439014693fb795f3a, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10335,7 +10356,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2999997920746559329}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b71d1996d67004241a3b69960856ffcb, type: 3}
   m_Name: 

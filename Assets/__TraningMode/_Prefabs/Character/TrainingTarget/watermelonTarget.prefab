@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 5468633971271525500}
   - component: {fileID: 7875903044181173250}
   - component: {fileID: 5942394885175409737}
-  - component: {fileID: 2398236683611566312}
+  - component: {fileID: 7392607078005399130}
   m_Layer: 0
   m_Name: watermelonTarget
   m_TagString: target
@@ -233,7 +233,7 @@ MonoBehaviour:
   isMoving: 0
   isRotating: 0
   isMovingAndRotating: 0
---- !u!54 &2398236683611566312
+--- !u!54 &7392607078005399130
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
