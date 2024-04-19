@@ -37,9 +37,9 @@ public class ExplosionGrenade : MonoBehaviour
         {
             if (hitCollider.CompareTag("target"))
             {
-                Animator anim = hitCollider.transform.gameObject.GetComponent<EnemyController>().anim;
+                Animator anim = hitCollider.transform.gameObject.GetComponent<watermelonTarget>().anim;
                 anim.SetTrigger("hit");
-                UIController.Instance.ShowScore(1);
+                UIController.Instance.ShowMissionProgress(999,1);
             }
         }
        Destroy(gameObject);

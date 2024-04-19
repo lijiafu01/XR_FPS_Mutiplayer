@@ -36,10 +36,14 @@ public class WeaponTraining : MonoBehaviour
 
     public void CompleteMission(string missionId)
     {
+        
         TrainingMission mission = missions.Find(m => m.missionId == missionId && m.isActive);
+        Debug.Log("dev 1");
         if (mission != null)
         {
+            Debug.Log("dev 2");
             mission.CompleteMission();
+            Debug.Log("dev 3");
             completedMissionsCount++;
             if (completedMissionsCount == totalMissionsCount)
             {

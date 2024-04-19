@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using TMPro;
+using System.Reflection;
 public class UIController : MonoBehaviour
 {
-    static int SCORE = 0;
+    static int HITNUM = 0;
     public TextMeshProUGUI scoreText;
     // Static biến để giữ instance duy nhất của UIController
     public static UIController Instance { get; private set; }
@@ -22,10 +23,15 @@ public class UIController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    public void ShowScore(int score)
+    public void ShowMissionProgress(int targetTotal,int hitNum)
     {
-        SCORE += score;
-        scoreText.text = "Score: "+ SCORE.ToString();
+        HITNUM += hitNum;
+        scoreText.text = "Target(" + HITNUM.ToString() + "/" + targetTotal.ToString() + ")";
+    }
+    public void SetMissionProgress(int targetTotal)
+    {
+        HITNUM = 0;
+        scoreText.text = "Target(" + HITNUM.ToString() + "/" + targetTotal.ToString() + ")";
     }
     // Thêm các phương thức quản lý UI vào đây
     public void ShowMainMenu()

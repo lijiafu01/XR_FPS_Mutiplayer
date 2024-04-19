@@ -8,6 +8,7 @@ TagManager:
   - player
   - bullet
   - target
+  - objline
   layers:
   - Default
   - TransparentFX
