@@ -2,7 +2,7 @@
 
 public class TrainingMission : MonoBehaviour
 {
-    public string missionId;
+    public int missionId;
     public bool isActive;
     public bool isCompleted;
 
@@ -11,6 +11,7 @@ public class TrainingMission : MonoBehaviour
     private void Start()
     {
         targetTotal = transform.childCount;
+        UIController.Instance.ShowMissionCurrent(missionId);
         UIController.Instance.SetMissionProgress(targetTotal);
     }
     public void UpdateMissionProgress(int hitTargetNum = 1)

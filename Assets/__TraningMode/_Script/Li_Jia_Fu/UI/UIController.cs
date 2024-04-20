@@ -4,7 +4,8 @@ using System.Reflection;
 public class UIController : MonoBehaviour
 {
     static int HITNUM = 0;
-    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI progressText;
+    public TextMeshProUGUI missionText;
     // Static biến để giữ instance duy nhất của UIController
     public static UIController Instance { get; private set; }
 
@@ -23,15 +24,26 @@ public class UIController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+    public void ShowMissionCurrent(int missionCurrent)
+    {
+        if (missionCurrent < 10)
+        {
+            missionText.text = "Mission 0" + missionCurrent.ToString();
+        }      
+        else
+        {
+            missionText.text = "Mission " + missionCurrent.ToString();
+        }
+    }
     public void ShowMissionProgress(int targetTotal,int hitNum)
     {
         HITNUM += hitNum;
-        scoreText.text = "Target(" + HITNUM.ToString() + "/" + targetTotal.ToString() + ")";
+        progressText.text = "Target(" + HITNUM.ToString() + "/" + targetTotal.ToString() + ")";
     }
     public void SetMissionProgress(int targetTotal)
     {
         HITNUM = 0;
-        scoreText.text = "Target(" + HITNUM.ToString() + "/" + targetTotal.ToString() + ")";
+        progressText.text = "Target(" + HITNUM.ToString() + "/" + targetTotal.ToString() + ")";
     }
     // Thêm các phương thức quản lý UI vào đây
     public void ShowMainMenu()

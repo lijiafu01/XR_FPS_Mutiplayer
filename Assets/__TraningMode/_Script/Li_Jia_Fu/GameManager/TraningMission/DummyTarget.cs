@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class watermelonTarget : MonoBehaviour
+public class DummyTarget : MonoBehaviour
 {
     public Animator anim;
 
@@ -80,11 +80,11 @@ public class watermelonTarget : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+
         if (collision.gameObject.tag == "bullet")
         {
             VFXManager.Instance.WoodHitBig(collision);
-            StartCoroutine(WaitForAnimation("hit"));            
+            StartCoroutine(WaitForAnimation("hit"));
         }
     }
     IEnumerator WaitForAnimation(string stateName)

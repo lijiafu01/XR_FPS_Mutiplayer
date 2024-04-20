@@ -38,7 +38,7 @@ public class TrainingMissionManager : MonoBehaviour
     }
 
 
-    public void CompleteTraining(WeaponType weaponType, string missionId)
+    public void CompleteTraining(WeaponType weaponType, int missionId)
     {
         WeaponTraining training = System.Array.Find(weaponTrainings, w => w.weaponType == weaponType);
         training.CompleteMission(missionId);

@@ -34,7 +34,7 @@ public class WeaponTraining : MonoBehaviour
         nextMission?.StartMission();
     }
 
-    public void CompleteMission(string missionId)
+    public void CompleteMission(int missionId)
     {
         
         TrainingMission mission = missions.Find(m => m.missionId == missionId && m.isActive);
