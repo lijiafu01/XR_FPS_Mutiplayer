@@ -52,6 +52,7 @@ namespace BeyondLimitsStudios
                 lineRenderer.SetPosition(2, centerLocalSpace);
                 lineRenderer.SetPosition(3, centerLocalSpace - dir * offset);
             }
+            
         }
     }
 }

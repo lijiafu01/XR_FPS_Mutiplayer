@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -70,7 +70,7 @@ namespace BeyondLimitsStudios
                 {
                     foreach (var col2 in bowstringHandleColliders)
                     {
-                        if(col1 != col2)
+                        if (col1 != col2)
                             Physics.IgnoreCollision(col1, col2, true);
                     }
                 }
@@ -119,7 +119,7 @@ namespace BeyondLimitsStudios
             {
                 return point1 + Vector3.Project(point - point1, point2 - point1);
             }
-            
+
             private void SpawnArrowPrefab()
             {
                 GameObject go = Instantiate(arrowPrefab);
@@ -225,7 +225,7 @@ namespace BeyondLimitsStudios
             }
         }
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         [CustomEditor(typeof(EnergyBow)), CanEditMultipleObjects]
         class EnergyBowEditor : Editor
         {
@@ -243,6 +243,6 @@ namespace BeyondLimitsStudios
                 DrawDefaultInspector();
             }
         }
-        #endif
+#endif
     }
 }

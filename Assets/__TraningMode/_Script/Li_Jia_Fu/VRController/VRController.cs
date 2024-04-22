@@ -2,10 +2,10 @@
 
 public class VRController : MonoBehaviour
 {
-    public GameObject rightHandController;
+    public GameObject Controller;
     private void Update()
     {
-        transform.position = rightHandController.transform.position;
-        transform.rotation = rightHandController.transform.rotation;
+        transform.position = Controller.transform.position;
+        transform.rotation = Controller.transform.rotation;
     }
 }

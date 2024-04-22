@@ -9,6 +9,7 @@ TagManager:
   - bullet
   - target
   - objline
+  - LeftHand
   layers:
   - Default
   - TransparentFX
