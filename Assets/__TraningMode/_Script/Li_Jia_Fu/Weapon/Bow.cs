@@ -10,28 +10,19 @@ public class Bow : MonoBehaviour
     [SerializeField] private LineRenderer bowString;    // LineRenderer để vẽ dây cung
     [SerializeField] private float maxPullDistance = -0.5f; // Khoảng cách kéo tối đa, giá trị âm
     [SerializeField] private float pullStrengthMultiplier = 1000f; // Nhân số để tính lực bắn dựa trên độ kéo
-    private Vector3 originalHandlePosition;             // Vị trí ban đầu của bow handle
     private GameObject currentArrow;
     private bool isStringPulled = false;
     private Transform leftHand;                        // Vị trí của controller tay trái
-
+    public Transform attackTransform; // Đảm bảo rằng bạn đã gán đúng Transform này trong Unity Editor
+    public Transform bowstringCenter;
     void Start()
     {
-        originalHandlePosition = bowHandle.position;      
-        //Invoke("test", 3f);
+
         ResetString();
     }
-   /* void test()
-    {
-        Vector3 newpos = new Vector3(bowHandle.position.x, bowHandle.position.y, bowHandle.position.z - 0.3f);
-        bowHandle.position = newpos;
-    }*/
     void Update()
     {
-        //viết một cái test ở đây ,nếu tôi nhấn phím k thì bowHandle sẽ từ từ tăng tức là trục z của nó sẽ âm dần cho đến khi maxPullDistance
-        //và khi tôi nhả tay ra thì sẽ bắn mũi tên 
-        // Kiểm tra nếu phím K được nhấn và dây cung chưa được kéo tối đa
-        if (Input.GetKey(KeyCode.K) && bowHandle.position.z > originalHandlePosition.z + maxPullDistance)
+        if (leftHand != null && OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch))
         {
             if (!isStringPulled)
             {
@@ -39,35 +30,46 @@ public class Bow : MonoBehaviour
                 isStringPulled = true;
             }
 
-            // Tính toán và cập nhật vị trí mới cho bowHandle, di chuyển nó từ từ về phía trước
-            float newZ = Mathf.Max(bowHandle.position.z - 0.01f, originalHandlePosition.z + maxPullDistance);
-            bowHandle.position = new Vector3(bowHandle.position.x, bowHandle.position.y, newZ);
-        }
-        else if (Input.GetKeyUp(KeyCode.K) && isStringPulled) // Khi phím K được thả ra
-        {
-            ShootArrow();
-            isStringPulled = false;
-        }
-        else if (!Input.GetKey(KeyCode.K) && !isStringPulled) // Khi không có tương tác
-        {
-            ResetString();
-        }
-
-
-
-        // Kiểm tra nút grip của tay cầm trái
-        /*if (leftHand != null && OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch))
-        {
-            if (!isStringPulled)
-            {
-                CreateArrow();
-                isStringPulled = true;
-            }
-
-            // Kéo dây cung dựa trên vị trí của tay trái trên trục Z
+            /*// Kéo dây cung dựa trên vị trí của tay trái trên trục Z
             Vector3 leftHandPos = leftHand.position;
-            float pullDistance = Mathf.Min(0, Mathf.Max(maxPullDistance, leftHandPos.z - originalHandlePosition.z));
-            bowHandle.position = new Vector3(bowHandle.position.x, bowHandle.position.y, originalHandlePosition.z + pullDistance);
+            float pullDistance = Mathf.Min(0, Mathf.Max(maxPullDistance, leftHandPos.z - bowstringCenter.position.z));
+            bowHandle.position = new Vector3(bowHandle.position.x, bowHandle.position.y, bowstringCenter.position.z + pullDistance);*/
+
+            //bản ổn định nhát ----------------------------------
+            /*// Tính vector kéo từ bowstringCenter đến leftHand
+            Vector3 pullVector = leftHand.position - bowstringCenter.position;
+            float pullMagnitude = pullVector.magnitude;
+
+            // Giới hạn độ dài của pullVector bằng maxPullDistance nếu cần
+            if (pullMagnitude > -maxPullDistance)
+            {
+                pullVector = pullVector.normalized * -maxPullDistance;
+            }
+
+            // Cập nhật vị trí của bowHandle dựa trên pullVector
+            bowHandle.position = bowstringCenter.position + pullVector;*/
+            //-------------------------------------------
+
+            // Hướng kéo tuyến tính từ bowStringCenter đến attackTransform
+            Vector3 pullDirection = (attackTransform.position - bowstringCenter.position).normalized;
+
+            // Khoảng cách từ tay đến bowStringCenter
+            float handDistance = Vector3.Distance(leftHand.position, bowstringCenter.position);
+
+            // Đảo ngược hướng kéo để phù hợp với cách thực tế kéo dây cung
+            // Giảm khoảng cách kéo nếu vượt quá giới hạn cho phép
+            float pullDistance = Mathf.Max(0, Mathf.Min(handDistance, -maxPullDistance));
+
+            // Cập nhật vị trí của bowHandle dọc theo hướng kéo đúng
+            bowHandle.position = bowstringCenter.position - pullDirection * pullDistance;
+
+
+
+            // Cập nhật hướng của mũi tên để luôn hướng theo attackTransform
+            if (currentArrow != null)
+            {
+                currentArrow.transform.rotation = Quaternion.LookRotation(attackTransform.forward);
+            }
         }
         else if (isStringPulled)
         {
@@ -78,9 +80,17 @@ public class Bow : MonoBehaviour
         else
         {
             ResetString();
-        }*/
+        }
     }
 
+    private void CreateArrow()
+    {
+        if (currentArrow == null)
+        {
+            currentArrow = Instantiate(arrowPrefab, bowHandle.position, Quaternion.identity);
+            currentArrow.transform.SetParent(bowHandle);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("LeftHand"))
@@ -98,29 +108,19 @@ public class Bow : MonoBehaviour
         }
     }
 
-    private void CreateArrow()
-    {
-        if (currentArrow == null)
-        {
-            currentArrow = Instantiate(arrowPrefab, bowHandle.position, Quaternion.identity);
-            currentArrow.transform.SetParent(bowHandle);
-        }
-    }
-
     private void ShootArrow()
     {
         if (currentArrow != null)
         {
             currentArrow.transform.SetParent(null);
             Rigidbody rb = currentArrow.GetComponent<Rigidbody>();
-            float pullDistance = Mathf.Abs(bowHandle.position.z - originalHandlePosition.z);
+            float pullDistance = Mathf.Abs(bowHandle.position.z - bowstringCenter.position.z);
             rb.AddForce(transform.forward * pullDistance * pullStrengthMultiplier);
             currentArrow = null;
         }
     }
-
     private void ResetString()
     {
-        bowHandle.position = originalHandlePosition;
+        bowHandle.position = bowstringCenter.position;
     }
 }
