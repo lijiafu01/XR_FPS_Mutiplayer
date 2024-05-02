@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TraningMode;
 public abstract class AttackBehaviour : MonoBehaviour
 {
     protected virtual void Start() { }

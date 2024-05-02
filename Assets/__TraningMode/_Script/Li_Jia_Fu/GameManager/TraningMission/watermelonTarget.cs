@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TraningMode;
 public class watermelonTarget : MonoBehaviour
 {
     public Animator anim;

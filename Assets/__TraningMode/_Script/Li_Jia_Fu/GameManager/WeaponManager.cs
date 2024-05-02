@@ -1,15 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum WeaponType
-{
-    Pistol,
-    Grenade
-}
+using TraningMode;
 public class WeaponManager : MonoBehaviour
 {
 
-    [SerializeField]  private WeaponType _currentWeapon;
+    private WeaponType _currentWeapon;
     public WeaponBehaviour WeaponBehaviour;
     public static WeaponManager Instance { get; private set; }
     private void Awake()
@@ -24,6 +20,11 @@ public class WeaponManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        _currentWeapon = GameManager.Instance.playerChooseWeapon;
+    }
+    private void Start()
+    {
+        
     }
     public WeaponType CurrentWeapon
     {

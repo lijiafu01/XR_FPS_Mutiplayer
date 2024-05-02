@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TraningMode;
 public abstract class WeaponBehaviour : MonoBehaviour
 {
     

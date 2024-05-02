@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-
+using TraningMode;
 [System.Serializable]
 public class Pool
 {
@@ -8,7 +9,6 @@ public class Pool
     public GameObject prefab;
     public int size;
 }
-
 public class ObjectPoolManager : MonoBehaviour
 {
     public static ObjectPoolManager Instance;
@@ -23,29 +23,22 @@ public class ObjectPoolManager : MonoBehaviour
 
         foreach (Pool pool in pools)
         {
+            GameObject poolHolder = new GameObject(pool.tag + " Pool");
+            poolHolder.transform.SetParent(transform);
+
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
             for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab, transform.position, Quaternion.identity);
-                if (pool.tag == "DamageText")
-                {
-                    obj.transform.SetParent(transform, false);
-                }
-                else
-                {
-                    obj.transform.parent = transform;
-
-                }
+                obj.transform.parent = poolHolder.transform;  // Set parent to the specific pool container
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }
 
-            // Th?m h?ng ??i n?y v?o t? ?i?n pool
+            // Thêm hàng đợi này vào từ điển pool
             poolDictionary[pool.tag] = objectPool;
         }
-
-
     }
     private void ExpandPool(string tag, int additionalCount = 1)
     {
@@ -64,25 +57,25 @@ public class ObjectPoolManager : MonoBehaviour
 
         Queue<GameObject> objectPool = poolDictionary[tag];
 
+        // Tìm container phù hợp cho pool này dựa trên tag
+        Transform poolHolder = GameObject.Find(tag + " Pool").transform;
+        if (poolHolder == null)
+        {
+            Debug.LogError("No pool holder found for tag " + tag);
+            return;
+        }
+
         for (int i = 0; i < additionalCount; i++)
         {
             GameObject obj = Instantiate(pool.prefab, transform.position, Quaternion.identity);
-            if (pool.tag == "DamageText")
-            {
-                obj.transform.SetParent(transform, false);
-            }
-            else
-            {
-                obj.transform.parent = transform;
-            }
+            obj.transform.SetParent(poolHolder);  // Set parent to the specific pool container
+
             obj.SetActive(false);
             objectPool.Enqueue(obj);
         }
 
-        // Cập nhật lại dictionary với hàng đợi mới
-        poolDictionary[tag] = objectPool;
+        // Không cần cập nhật lại dictionary vì hàng đợi là một tham chiếu
     }
-
     public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion? rotation = null)
     {
         if (!poolDictionary.ContainsKey(tag))
@@ -91,36 +84,24 @@ public class ObjectPoolManager : MonoBehaviour
             return null;
         }
 
-        // Kiểm tra xem tất cả các đối tượng trong pool có đang active không
+        // Mở rộng pool nếu cần
         if (AllObjectsActive(tag))
         {
-            ExpandPool(tag, 1);  // Mở rộng pool nếu tất cả đối tượng đều active, thêm 1 đối tượng mới
+            ExpandPool(tag, 1);  // Mở rộng pool nếu tất cả đối tượng đều active
         }
 
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
-
         objectToSpawn.SetActive(true);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation ?? Quaternion.identity;
-
         poolDictionary[tag].Enqueue(objectToSpawn);
 
         return objectToSpawn;
     }
-
     private bool AllObjectsActive(string tag)
     {
-        foreach (GameObject obj in poolDictionary[tag])
-        {
-            if (!obj.activeInHierarchy)  // Kiểm tra nếu có bất kỳ đối tượng nào không active
-            {
-                return false;
-            }
-        }
-        return true;  // Tất cả đối tượng đều active
+        return poolDictionary[tag].All(obj => obj.activeInHierarchy);
     }
-
-
     // Call this method to return the object back to the pool
     public void ReturnToPool(string tag, GameObject objectToReturn)
     {
@@ -133,6 +114,4 @@ public class ObjectPoolManager : MonoBehaviour
         objectToReturn.SetActive(false);
         poolDictionary[tag].Enqueue(objectToReturn);
     }
-
-
 }

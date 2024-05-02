@@ -1,4 +1,4 @@
-namespace BeyondLimitsStudios
+/*namespace BeyondLimitsStudios
 {
     namespace VRInteractables
     {
@@ -13,4 +13,4 @@ namespace BeyondLimitsStudios
             public float resetSpeed = 1f;
         }
     }
-}
+}*/

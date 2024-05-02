@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TraningMode;
 public class VFXManager : MonoBehaviour
 {
     public static VFXManager Instance { get; private set; }

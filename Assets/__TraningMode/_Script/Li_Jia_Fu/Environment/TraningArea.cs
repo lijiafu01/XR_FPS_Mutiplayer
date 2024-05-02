@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using TraningMode;
 public class TraningArea : MonoBehaviour
 {
     public float radius = 5f; // Bán kính của khu vực kiểm tra

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using TraningMode;
+using UnityEngine;
+
 
 public class PlayerController : MonoBehaviour
 {

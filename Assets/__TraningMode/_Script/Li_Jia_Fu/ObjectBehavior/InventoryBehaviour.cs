@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TraningMode;
 public class InventoryBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update

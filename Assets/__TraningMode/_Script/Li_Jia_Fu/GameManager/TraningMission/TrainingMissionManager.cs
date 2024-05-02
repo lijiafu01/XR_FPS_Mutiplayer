@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using TraningMode;
 public class TrainingMissionManager : MonoBehaviour
 {
     public WeaponTraining[] weaponTrainings;

@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TraningMode;
 public class GameManager : MonoBehaviour
 {
+    public WeaponType playerChooseWeapon;
     public static GameManager Instance { get; private set; }
     private void Awake()
     { 

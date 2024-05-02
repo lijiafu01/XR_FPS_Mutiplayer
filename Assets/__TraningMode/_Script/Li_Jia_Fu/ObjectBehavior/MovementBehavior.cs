@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using TraningMode;
 public abstract class MovementBehaviour : MonoBehaviour
 {
     protected virtual void Awake() { }

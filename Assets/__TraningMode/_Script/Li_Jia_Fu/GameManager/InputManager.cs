@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TraningMode;
 public enum ControllerHand
 {
     Left,

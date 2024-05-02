@@ -3,28 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : AttackBehaviour
+namespace TraningMode
 {
-    private WeaponBehaviour equippedWeapon;
-    protected override void Start()
+    public class PlayerAttack : AttackBehaviour
     {
-        equippedWeapon = PlayerController.Instance.PlayerWeapon.WeaponBehaviour;
-    }
-   
-    protected override void Update()
-    {
-        Attack();
-        Reload();
-    }
-    protected override void Attack()
-    {
-        if (equippedWeapon == null) return;
-        equippedWeapon.Fire();
-    }
+        private WeaponBehaviour equippedWeapon;
+        protected override void Start()
+        {
+            equippedWeapon = PlayerController.Instance.PlayerWeapon.WeaponBehaviour;
+        }
 
-    protected override void Reload()
-    {
-        if (equippedWeapon == null) return;
-        equippedWeapon.Reload();
+        protected override void Update()
+        {
+            Attack();
+            Reload();
+        }
+        protected override void Attack()
+        {
+            if (equippedWeapon == null) return;
+            equippedWeapon.Fire();
+        }
+
+        protected override void Reload()
+        {
+            if (equippedWeapon == null) return;
+            equippedWeapon.Reload();
+        }
     }
 }
+

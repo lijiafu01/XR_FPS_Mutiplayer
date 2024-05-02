@@ -1,44 +1,88 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TraningMode;
 public class Arrow : MonoBehaviour
 {
     private Rigidbody rb;  // Reference to the Rigidbody component
     [SerializeField] private float penetrationDepth = 0.5f; // Configurable penetration depth
+    private Vector3 lastVelocity; // Biến để lưu vận tốc cuối cùng trước khi va chạm
+    private CapsuleCollider bowCollider;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>(); // Get the Rigidbody component
-        
+        bowCollider = GetComponent<CapsuleCollider>();
     }
 
-    void Update()
+    private void OnEnable()
     {
-        // Optional: handle arrow logic here
+        if (bowCollider != null)
+        {
+            bowCollider.isTrigger = true;
+        }
+        else
+        {
+            Debug.LogError("bowCollider is not assigned!");
+        }
+
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+        }
+        else
+        {
+            Debug.LogError("Rigidbody (rb) is not assigned!");
+        }
     }
 
-    // This function is called when the arrow triggers with another object
-    void OnTriggerEnter(Collider other)
+
+    private void Update()
     {
-        // Check if the object triggered with has the tag "target"
-        if (other.CompareTag("target"))
+        if (rb.velocity != Vector3.zero)
+        {
+            lastVelocity = rb.velocity.normalized; // Cập nhật hướng của mũi tên
+        }
+    }
+   /* private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("BowStringHandle"))
+        {
+            transform.position = other.transform.position;
+        }
+    }*/
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("BowCenter"))
+        {
+            bowCollider.isTrigger = false;
+            Invoke("ReturnObjectPool", 5f);
+        }
+    }
+
+    private void ReturnObjectPool()
+    {
+        ObjectPoolManager.Instance.ReturnToPool("arrow", gameObject);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("target"))
         {
             Debug.Log("dev co vam cham");
-            rb.isKinematic = true; // Ensure the Rigidbody doesn't affect the trigger simulation
-            // Calculate the new position for the arrow, simulating 'soft' penetration
-            Vector3 contactPoint = transform.position; // Assuming the arrow's tip is at its transform position
-            Vector3 contactNormal = transform.forward; // Assuming the arrow's forward direction is the direction of entry
+            rb.isKinematic = true; // Đảm bảo Rigidbody không ảnh hưởng đến mô phỏng va chạm
 
-            // Adjust the position so the arrow appears to stick into the target
-            // Move it slightly back from the contact point by the penetration depth along the contact normal
-            transform.position = contactPoint + contactNormal * penetrationDepth;
+            Vector3 contactPoint = collision.contacts[0].point;
+            Vector3 contactNormal = collision.contacts[0].normal;
 
-            // Set the forward direction of the arrow to align with the contact normal
-            transform.forward = contactNormal;
+            // Điều chỉnh vị trí mũi tên để cắm vào mục tiêu
+            transform.position = contactPoint - lastVelocity * penetrationDepth;
 
-            // Parent the arrow to the target object to make it move and rotate with the target
-            transform.SetParent(other.transform);
+            // Đặt hướng của mũi tên để thẳng hàng với hướng ban đầu của nó
+            transform.forward = lastVelocity;
+
+            // Parent mũi tên vào đối tượng mục tiêu
+            transform.SetParent(collision.transform);
         }
     }
 }

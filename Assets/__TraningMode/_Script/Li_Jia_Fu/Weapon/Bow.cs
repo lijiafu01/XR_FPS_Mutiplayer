@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Oculus;
-
-public class Bow : MonoBehaviour
+using TraningMode;
+public class Bow : WeaponBehaviour
 {
     [SerializeField] private Transform bowHandle;       // Điểm nắm giữa dây cung
     [SerializeField] private GameObject arrowPrefab;    // Prefab của mũi tên
@@ -15,12 +15,12 @@ public class Bow : MonoBehaviour
     private Transform leftHand;                        // Vị trí của controller tay trái
     public Transform attackTransform; // Đảm bảo rằng bạn đã gán đúng Transform này trong Unity Editor
     public Transform bowstringCenter;
-    void Start()
+    protected override void Start()
     {
 
         ResetString();
     }
-    void Update()
+    public override void Fire()
     {
         if (leftHand != null && OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch))
         {
@@ -29,26 +29,6 @@ public class Bow : MonoBehaviour
                 CreateArrow();
                 isStringPulled = true;
             }
-
-            /*// Kéo dây cung dựa trên vị trí của tay trái trên trục Z
-            Vector3 leftHandPos = leftHand.position;
-            float pullDistance = Mathf.Min(0, Mathf.Max(maxPullDistance, leftHandPos.z - bowstringCenter.position.z));
-            bowHandle.position = new Vector3(bowHandle.position.x, bowHandle.position.y, bowstringCenter.position.z + pullDistance);*/
-
-            //bản ổn định nhát ----------------------------------
-            /*// Tính vector kéo từ bowstringCenter đến leftHand
-            Vector3 pullVector = leftHand.position - bowstringCenter.position;
-            float pullMagnitude = pullVector.magnitude;
-
-            // Giới hạn độ dài của pullVector bằng maxPullDistance nếu cần
-            if (pullMagnitude > -maxPullDistance)
-            {
-                pullVector = pullVector.normalized * -maxPullDistance;
-            }
-
-            // Cập nhật vị trí của bowHandle dựa trên pullVector
-            bowHandle.position = bowstringCenter.position + pullVector;*/
-            //-------------------------------------------
 
             // Hướng kéo tuyến tính từ bowStringCenter đến attackTransform
             Vector3 pullDirection = (attackTransform.position - bowstringCenter.position).normalized;
@@ -62,8 +42,6 @@ public class Bow : MonoBehaviour
 
             // Cập nhật vị trí của bowHandle dọc theo hướng kéo đúng
             bowHandle.position = bowstringCenter.position - pullDirection * pullDistance;
-
-
 
             // Cập nhật hướng của mũi tên để luôn hướng theo attackTransform
             if (currentArrow != null)
@@ -83,11 +61,21 @@ public class Bow : MonoBehaviour
         }
     }
 
+    public override void Reload()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void FillAmmunition(int amount)
+    {
+        throw new System.NotImplementedException();
+    }
     private void CreateArrow()
     {
         if (currentArrow == null)
         {
-            currentArrow = Instantiate(arrowPrefab, bowHandle.position, Quaternion.identity);
+            currentArrow = ObjectPoolManager.Instance.SpawnFromPool("arrow", bowHandle.position, Quaternion.identity);
+            //currentArrow = Instantiate(arrowPrefab, bowHandle.position, Quaternion.identity);
             currentArrow.transform.SetParent(bowHandle);
         }
     }
@@ -107,7 +95,6 @@ public class Bow : MonoBehaviour
             leftHand = null;
         }
     }
-
     private void ShootArrow()
     {
         if (currentArrow != null)
@@ -117,10 +104,19 @@ public class Bow : MonoBehaviour
             float pullDistance = Mathf.Abs(bowHandle.position.z - bowstringCenter.position.z);
             rb.AddForce(transform.forward * pullDistance * pullStrengthMultiplier);
             currentArrow = null;
+            //Invoke("SetBowCollider", 0.05f);          
+            
         }
     }
+    /*private void SetBowCollider()
+    {
+        currentArrow.GetComponent<CapsuleCollider>().isTrigger = false;
+        currentArrow = null;
+    }*/
     private void ResetString()
     {
         bowHandle.position = bowstringCenter.position;
     }
+
+    
 }

@@ -1,6 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
-
+using TraningMode;
 public class Bowstring : MonoBehaviour
 {
     [SerializeField]

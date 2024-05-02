@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
-
+using TraningMode;
 public class WeaponTraining : MonoBehaviour
 {
     public WeaponType weaponType;

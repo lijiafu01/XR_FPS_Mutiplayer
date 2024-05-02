@@ -10,6 +10,8 @@ TagManager:
   - target
   - objline
   - LeftHand
+  - BowCenter
+  - BowStringHandle
   layers:
   - Default
   - TransparentFX

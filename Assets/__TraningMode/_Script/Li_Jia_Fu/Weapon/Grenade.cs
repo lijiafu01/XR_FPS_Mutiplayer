@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using TraningMode;
 public class Grenade : WeaponBehaviour
 {
     public GameObject grenadePrefab; // Prefab của lựu đạn
@@ -8,6 +8,7 @@ public class Grenade : WeaponBehaviour
 
     public override void Fire()
     {
+        if (!InputManager.Instance.IsRightGripPressed()) return;
         GameObject grenade = Instantiate(grenadePrefab, throwPoint.position, throwPoint.rotation);
         Rigidbody rb = grenade.GetComponent<Rigidbody>();
 

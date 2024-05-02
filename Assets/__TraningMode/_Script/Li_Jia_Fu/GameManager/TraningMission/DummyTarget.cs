@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿using Oculus.Interaction;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TraningMode;
 public class DummyTarget : MonoBehaviour
 {
     public Animator anim;
@@ -87,6 +88,8 @@ public class DummyTarget : MonoBehaviour
             StartCoroutine(WaitForAnimation("hit"));
         }
     }
+  
+
     IEnumerator WaitForAnimation(string stateName)
     {
         anim.SetTrigger(stateName);

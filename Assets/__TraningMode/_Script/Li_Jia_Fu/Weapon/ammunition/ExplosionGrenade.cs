@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TraningMode;
 public class ExplosionGrenade : MonoBehaviour
 {
     bool ischeck =false;

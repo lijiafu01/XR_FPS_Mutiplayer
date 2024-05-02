@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using TraningMode;
 
 [System.Serializable] // Đảm bảo Unity có thể hiển thị cấu trúc này trong Inspector
 public class SpawnableObject

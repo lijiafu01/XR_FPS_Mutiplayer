@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using TraningMode;
 public class TrainingMission : MonoBehaviour
 {
     public int missionId;
