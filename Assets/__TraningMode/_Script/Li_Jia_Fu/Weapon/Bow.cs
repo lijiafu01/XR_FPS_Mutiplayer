@@ -63,7 +63,7 @@ public class Bow : WeaponBehaviour
 
     public override void Reload()
     {
-        throw new System.NotImplementedException();
+
     }
 
     public override void FillAmmunition(int amount)
