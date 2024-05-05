@@ -11,32 +11,32 @@ public class TrainingMission : MonoBehaviour
     private void Start()
     {
         targetTotal = transform.childCount;
-        UIController.Instance.ShowMissionCurrent(missionId);
-        UIController.Instance.SetMissionProgress(targetTotal);
+        TraningMissionUI.Instance.ShowMissionCurrent(missionId);
+        TraningMissionUI.Instance.SetMissionProgress(targetTotal);
     }
     public void UpdateMissionProgress(int hitTargetNum = 1)
     {
         _hitTargetNum += hitTargetNum;
         if (_hitTargetNum == targetTotal)
         {
-            WeaponTraining weaponTraining = transform.GetComponentInParent<WeaponTraining>();
-            weaponTraining.CompleteMission(missionId);
+            TraningMissionUI.Instance.trainerUI.UpdateCurrentMission(missionId,false);
+            /*WeaponTraining weaponTraining = transform.GetComponentInParent<WeaponTraining>();
+            weaponTraining.CompleteMission(missionId);*/
         }
-        UIController.Instance.ShowMissionProgress(targetTotal, 1);
+        TraningMissionUI.Instance.ShowMissionProgress(targetTotal, 1);
     }
     public void StartMission()
     {
         isActive = true;
         gameObject.SetActive(true);
+        TraningMissionUI.Instance.trainerUI.UpdateCurrentMission(missionId, true);
         Debug.Log($"Mission {missionId} started.");
     }
 
     public void CompleteMission()
     {
-        Debug.Log("dev check completed");
         isCompleted = true;
         isActive = false;
         gameObject.SetActive(false);
-        Debug.Log($"dev Mission {missionId} completed.");
     }
 }

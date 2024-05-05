@@ -1,22 +1,28 @@
 ﻿using UnityEngine;
 using TraningMode;
+
 public class TrainingMissionManager : MonoBehaviour
 {
-    public WeaponTraining[] weaponTrainings;
+    public static TrainingMissionManager Instance { get; private set; }
+    [SerializeField] private WeaponTraining[] weaponTrainings;
     private WeaponType trainingWeapon;
-    /*void Start()
+    private WeaponTraining _weaponTraining;
+    public WeaponTraining WeaponTraining => _weaponTraining;
+    private void Awake()
     {
-
-        foreach (var training in weaponTrainings)
+        if (Instance == null)
         {
-            GameObject weaponObj = new GameObject($"{training.weaponType}Training");
-            weaponObj.transform.SetParent(this.transform);
-            var weaponTraining = weaponObj.AddComponent<WeaponTraining>();
-            weaponTraining.weaponType = training.weaponType;
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Optional: Makes the object not be destroyed automatically when loading a new scene.
         }
-    }*/
+        else
+        {
+            Destroy(gameObject); // Ensures that there is only one instance of this object in the game.
+        }
+    }
     private void Start()
     {
+        //TraningMissionUI.Instance.trainerUI.UpdateCurrentMission(0);
         trainingWeapon = WeaponManager.Instance.CurrentWeapon;
         StartTraining(trainingWeapon);
     }
@@ -27,6 +33,7 @@ public class TrainingMissionManager : MonoBehaviour
             // Kiểm tra nếu training match với loại vũ khí được yêu cầu
             if (training.weaponType == weaponType)
             {
+                _weaponTraining = training;
                 training.gameObject.SetActive(true); // Kích hoạt GameObject tương ứng
                 training.StartNextMission(); // Bắt đầu nhiệm vụ tiếp theo
             }

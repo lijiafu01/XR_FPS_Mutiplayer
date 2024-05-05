@@ -4,6 +4,8 @@ using System.Reflection;
 using TraningMode;
 public class UIController : MonoBehaviour
 {
+    /*public TrainerUI trainerUI;
+
     static int HITNUM = 0;
     public TextMeshProUGUI progressText;
     public TextMeshProUGUI missionText;
@@ -57,5 +59,5 @@ public class UIController : MonoBehaviour
         // Logic để ẩn main menu
     }
 
-    // Ví dụ: UpdateScore, ShowGameOverScreen, v.v.
+    // Ví dụ: UpdateScore, ShowGameOverScreen, v.v.*/
 }
