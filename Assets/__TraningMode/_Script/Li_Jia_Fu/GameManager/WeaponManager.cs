@@ -5,7 +5,7 @@ using TraningMode;
 public class WeaponManager : MonoBehaviour
 {
 
-    private WeaponType _currentWeapon;
+    [SerializeField]private WeaponType _currentWeapon;
     public WeaponBehaviour WeaponBehaviour;
     public static WeaponManager Instance { get; private set; }
     private void Awake()
