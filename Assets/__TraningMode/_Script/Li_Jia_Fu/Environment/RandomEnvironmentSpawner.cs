@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using TraningMode;
 
-[System.Serializable] // Đảm bảo Unity có thể hiển thị cấu trúc này trong Inspector
-public class SpawnableObject
-{
-    public GameObject gameObject; // GameObject để spawn
-    public float spawnRate = 1f; // Tỉ lệ spawn, cao hơn nghĩa là xuất hiện nhiều hơn
-}
+
 
 public class RandomEnvironmentSpawner : MonoBehaviour
 {
@@ -17,6 +12,13 @@ public class RandomEnvironmentSpawner : MonoBehaviour
     public int spawnCount = 10; // Số lượng object sinh ra tổng cộng
     public Vector2 scaleRange = new Vector2(0.5f, 2f); // Phạm vi scale của object
 
+
+    [System.Serializable] // Đảm bảo Unity có thể hiển thị cấu trúc này trong Inspector
+    public class SpawnableObject
+    {
+        public GameObject gameObject; // GameObject để spawn
+        public float spawnRate = 1f; // Tỉ lệ spawn, cao hơn nghĩa là xuất hiện nhiều hơn
+    }
     void Start()
     {
         SpawnObjects();

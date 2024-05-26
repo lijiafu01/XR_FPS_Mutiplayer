@@ -17,7 +17,7 @@ public class Bow : WeaponBehaviour
 
     private GameObject currentArrow;
     private bool isStringPulled = false;
-    private Transform leftHand;                        // Vị trí của controller tay trái
+    private Transform RightHand;                        // Vị trí của controller tay trái
     public Transform attackTransform; // Đảm bảo rằng bạn đã gán đúng Transform này trong Unity Editor
     public Transform bowstringCenter;
     protected override void Start()
@@ -27,7 +27,7 @@ public class Bow : WeaponBehaviour
     }
     public override void Fire()
     {
-        if (leftHand != null && OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch))
+        if (RightHand != null && OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.RTouch))
         {
             if (!isStringPulled)
             {
@@ -40,7 +40,7 @@ public class Bow : WeaponBehaviour
             Vector3 pullDirection = (attackTransform.position - bowstringCenter.position).normalized;
 
             // Khoảng cách từ tay đến bowStringCenter
-            float handDistance = Vector3.Distance(leftHand.position, bowstringCenter.position);
+            float handDistance = Vector3.Distance(RightHand.position, bowstringCenter.position);
 
             // Đảo ngược hướng kéo để phù hợp với cách thực tế kéo dây cung
             // Giảm khoảng cách kéo nếu vượt quá giới hạn cho phép
@@ -60,7 +60,7 @@ public class Bow : WeaponBehaviour
             drawSound.Stop();
             ShootArrow();
             isStringPulled = false;
-            leftHand = null;
+            RightHand = null;
         }
         else
         {
@@ -88,18 +88,18 @@ public class Bow : WeaponBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("LeftHand"))
+        if (other.CompareTag("RightHand"))
         {
-            leftHand = other.transform;
+            RightHand = other.transform;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("LeftHand"))
+        if (other.CompareTag("RightHand"))
         {
             isStringPulled = false;
-            leftHand = null;
+            RightHand = null;
         }
     }
     private void ShootArrow()

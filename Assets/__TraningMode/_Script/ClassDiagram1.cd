@@ -1,136 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="EnemyAttack" Collapsed="true">
-    <Position X="4.5" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Character\Enemy\EnemyAttack.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="EnemyController" Collapsed="true">
-    <Position X="6.25" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAQAAAACAAAAAAAIAQAAAAAAAAA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Character\Enemy\EnemyController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="PlayerAttack">
-    <Position X="1.75" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQCAAAAACAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Character\Player\PlayerAttack.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="PlayerMovement" Collapsed="true">
-    <Position X="8" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAASAAAAAABAAAAAAAAAAAASAAAAAAAAIAAAA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Character\Player\PlayerMovement.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="PlayerTeleport" Collapsed="true">
-    <Position X="9.75" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAIAAAAAgABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Character\Player\PlayerTeleport.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="PlayerTeleporter" Collapsed="true">
-    <Position X="4.5" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AEAACYAAAmAAAAAEgAAAAAAAAAAQAgAAQAwBBAJEAEQ=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Character\Player\PlayerTeleporter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SpawnableObject" Collapsed="true">
-    <Position X="8" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Environment\RandomEnvironmentSpawner.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="RandomEnvironmentSpawner">
-    <Position X="6.25" Y="6.25" Width="1.5" />
+    <Position X="5.25" Y="4.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="RandomEnvironmentSpawner.SpawnableObject">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Environment\RandomEnvironmentSpawner.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAGCAAAAAQgAAAAAAAAAAAAAAAAAAIAEAAAA=</HashCode>
       <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Environment\RandomEnvironmentSpawner.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TraningArea">
-    <Position X="9.75" Y="6.25" Width="1.5" />
+    <Position X="9" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACCIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Environment\TraningArea.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="InputManager">
-    <Position X="9.75" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>CAQQAAAAAAABAAAAAAAIAAACABQAAAAAQAAAAAAAAEA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\InputManager.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AttackBehaviour" Collapsed="true">
-    <Position X="1.75" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAAAAAAAAAIAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\ObjectBehavior\AttackBehaviour.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="InventoryBehaviour" Collapsed="true">
-    <Position X="4.5" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\ObjectBehavior\InventoryBehaviour.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MovementBehaviour" Collapsed="true">
-    <Position X="6.25" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAAiAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\ObjectBehavior\MovementBehavior.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="UIController">
-    <Position X="4.5" Y="7.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAQAAAAIAAAAgAAAAAAAAQCAAAAAAAEA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\UI\UIController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ExplosionGrenade" Collapsed="true">
-    <Position X="8" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>QAQAIAAAACAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Weapon\ammunition\ExplosionGrenade.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Grenade" Collapsed="true">
-    <Position X="2" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAQAAAAAAAEAAAAAAAEAAQACAAAAAAAABA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Weapon\Grenade.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Pistol" Collapsed="true">
-    <Position X="4.25" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>IAAAIAAAACAAAAAAAAAAAAAAAAAEAAQACAAAQAAEAEA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Weapon\Pistol.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Weapon" Collapsed="true">
-    <Position X="6.5" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAEAAQACAAAAAAAAEA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Weapon\Weapon.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="WeaponBehaviour" Collapsed="true">
-    <Position X="4.25" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAACIAAAAAAAQAIAAAAAAEAAQACAAAAAAAAEA=</HashCode>
-      <FileName>Assets\__TraningMode\_Script\Li_Jia_Fu\Weapon\WeaponBehaviour.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

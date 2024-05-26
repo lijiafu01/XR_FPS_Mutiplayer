@@ -29,7 +29,9 @@ public class Pistol : WeaponBehaviour
     }
     public override void Fire()
     {
+        
         if (!InputManager.Instance.GetTriggerPressed()) return;
+        if (!GameManager.Instance.isRun) return;
         if (Time.time >= nextFireTime)
         {
             //GameObject bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);

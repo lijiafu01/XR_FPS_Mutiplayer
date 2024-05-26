@@ -3484,10 +3484,18 @@ PrefabInstance:
       propertyPath: _controller
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7956160891979918893, guid: 44cf50d1a2e68b64791a3e3143ccda19, type: 3}
+      propertyPath: _hideWhenNoInteractable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7983261105550752962, guid: 44cf50d1a2e68b64791a3e3143ccda19, type: 3}
       propertyPath: _controller
       value: 
       objectReference: {fileID: 973113769}
+    - target: {fileID: 8105528931859149806, guid: 44cf50d1a2e68b64791a3e3143ccda19, type: 3}
+      propertyPath: _maxRayLength
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8759371145072476454, guid: 44cf50d1a2e68b64791a3e3143ccda19, type: 3}
       propertyPath: _offset.z
       value: 0.03
@@ -11654,7 +11662,7 @@ Transform:
   m_GameObject: {fileID: 1445428005}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7, y: 2, z: 6}
+  m_LocalPosition: {x: 1.7, y: 2.21, z: 4.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14261,6 +14269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerChooseWeapon: 0
+  isRun: 0
 --- !u!4 &1659840229
 Transform:
   m_ObjectHideFlags: 0
@@ -18327,10 +18336,18 @@ PrefabInstance:
       propertyPath: _controller
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7956160891979918893, guid: 44cf50d1a2e68b64791a3e3143ccda19, type: 3}
+      propertyPath: _hideWhenNoInteractable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7983261105550752962, guid: 44cf50d1a2e68b64791a3e3143ccda19, type: 3}
       propertyPath: _controller
       value: 
       objectReference: {fileID: 1977710}
+    - target: {fileID: 8105528931859149806, guid: 44cf50d1a2e68b64791a3e3143ccda19, type: 3}
+      propertyPath: _maxRayLength
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

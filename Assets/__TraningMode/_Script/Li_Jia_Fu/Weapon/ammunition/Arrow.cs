@@ -62,6 +62,7 @@ public class Arrow : MonoBehaviour
 
     private void ReturnObjectPool()
     {
+       // Destroy(gameObject);
         ObjectPoolManager.Instance.ReturnToPool("arrow", gameObject);
     }
 

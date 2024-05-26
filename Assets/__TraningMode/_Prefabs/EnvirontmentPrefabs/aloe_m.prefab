@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1527939728686992636}
   m_Layer: 0
   m_Name: aloe_m
-  m_TagString: Untagged
+  m_TagString: evr
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
