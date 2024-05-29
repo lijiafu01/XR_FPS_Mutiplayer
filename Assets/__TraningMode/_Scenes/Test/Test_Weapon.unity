@@ -317,8 +317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5b1a1c5d603c34897581ea741ffbad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressText: {fileID: 377774162}
-  missionText: {fileID: 554791318}
 --- !u!1001 &115033137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7994,6 +7992,8 @@ MonoBehaviour:
   muzzle: {fileID: 5849585126478297874}
   shootForce: 5000
   bulletPrefab: {fileID: 5304055121516845748, guid: 66debc95b64e1f845a8112a7415b3764, type: 3}
+  shootSound: {fileID: 0}
+  Anim: {fileID: 0}
 --- !u!1 &1288183727272826664
 GameObject:
   m_ObjectHideFlags: 0
@@ -14174,6 +14174,8 @@ MonoBehaviour:
   bowString: {fileID: 3592113308692566721}
   maxPullDistance: -0.5
   pullStrengthMultiplier: 10000
+  drawSound: {fileID: 0}
+  shootSound: {fileID: 0}
   attackTransform: {fileID: 7590287375631179676}
   bowstringCenter: {fileID: 6226582445799848365}
 --- !u!54 &5236027778358163706
@@ -18791,6 +18793,7 @@ MonoBehaviour:
   grenadePrefab: {fileID: 4113121891846149438, guid: 9f996f004b9a6324ea78f8f66fc7cdd3, type: 3}
   throwPoint: {fileID: 8184613564113253218}
   throwForce: 10
+  throwCooldown: 1
 --- !u!1 &7966204191425079339
 GameObject:
   m_ObjectHideFlags: 0
