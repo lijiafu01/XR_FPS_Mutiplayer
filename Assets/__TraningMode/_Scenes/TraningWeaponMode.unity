@@ -1960,7 +1960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &348479673
 Transform:
   m_ObjectHideFlags: 0
@@ -3268,8 +3268,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484715696}
-  m_LocalRotation: {x: 0, y: 0.5311029, z: 0, w: 0.8473074}
-  m_LocalPosition: {x: 0, y: 0, z: 1.94}
+  m_LocalRotation: {x: -0, y: 0.47865522, z: -0, w: 0.878003}
+  m_LocalPosition: {x: 0, y: 0, z: 1.78}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -3280,10 +3280,10 @@ RectTransform:
   - {fileID: 1774447385}
   - {fileID: 1812770276}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 64.16, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 57.195, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 3.24, y: 1.146}
+  m_AnchoredPosition: {x: 2.316, y: 1.146}
   m_SizeDelta: {x: 1675.6177, y: 1202.1843}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &495238296
@@ -4873,6 +4873,10 @@ PrefabInstance:
       propertyPath: _interactors.Array.data[1]
       value: 
       objectReference: {fileID: 426855827}
+    - target: {fileID: 4519461025698783881, guid: fbfc588a949bb1a42b20e5bddc4cf8cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4706570838751828867, guid: fbfc588a949bb1a42b20e5bddc4cf8cf, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.5436577
@@ -4913,6 +4917,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.0000000018992858
       objectReference: {fileID: 0}
+    - target: {fileID: 7480769016490772735, guid: fbfc588a949bb1a42b20e5bddc4cf8cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7698479342617112532, guid: fbfc588a949bb1a42b20e5bddc4cf8cf, type: 3}
       propertyPath: _hmdData
       value: 
@@ -4940,6 +4948,10 @@ PrefabInstance:
     - target: {fileID: 7906197682480693693, guid: fbfc588a949bb1a42b20e5bddc4cf8cf, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.013941461
+      objectReference: {fileID: 0}
+    - target: {fileID: 8104814095975130638, guid: fbfc588a949bb1a42b20e5bddc4cf8cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8762320472523328093, guid: fbfc588a949bb1a42b20e5bddc4cf8cf, type: 3}
       propertyPath: m_IsActive
@@ -5448,7 +5460,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9811321, g: 0.79742247, b: 0.2906372, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -5775,6 +5787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88a74cdc59d58448acb62ad8d3b9fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConnectionManager: {fileID: 0}
 --- !u!4 &905687072
 Transform:
   m_ObjectHideFlags: 0
@@ -9470,7 +9483,7 @@ MonoBehaviour:
     spawnRate: 0.1
   width: 222
   depth: 222
-  spawnCount: 0
+  spawnCount: 5000
   scaleRange: {x: 0.2, y: 1.5}
 --- !u!1001 &1488914418
 PrefabInstance:
@@ -10391,6 +10404,10 @@ PrefabInstance:
     - target: {fileID: 112276, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_Name
       value: OVRControllerPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 112276, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 488160, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12427,16 +12444,16 @@ MonoBehaviour:
   pools:
   - tag: pistolbullet
     prefab: {fileID: 5304055121516845748, guid: 66debc95b64e1f845a8112a7415b3764, type: 3}
-    size: 5
+    size: 100
   - tag: pistolmuzzleflash
     prefab: {fileID: 3761728480313762264, guid: 384bb4df9b7f2a94190862f786f84d26, type: 3}
-    size: 10
+    size: 100
   - tag: woodhitbig
     prefab: {fileID: 7416302535292414673, guid: c564926406ac6b048867dd4eea3a29dd, type: 3}
-    size: 10
+    size: 100
   - tag: arrow
     prefab: {fileID: 1153661366614712292, guid: 96a57e863555be74997e5b9e220952c3, type: 3}
-    size: 20
+    size: 100
 --- !u!4 &1871822412
 Transform:
   m_ObjectHideFlags: 0
@@ -13758,7 +13775,7 @@ MonoBehaviour:
   fireRate: 3
   nextFireTime: 0
   muzzle: {fileID: 5849585126478297874}
-  shootForce: 5000
+  shootForce: 4000
   bulletPrefab: {fileID: 5304055121516845748, guid: 66debc95b64e1f845a8112a7415b3764, type: 3}
   shootSound: {fileID: 3320756112540016195}
   Anim: {fileID: 3320756112540016196}
@@ -14024,7 +14041,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3320756112540016194}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1993722, y: -0, z: -0, w: 0.97992384}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0031, y: -0.035899997, z: 0.0261}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14038,7 +14055,7 @@ Transform:
   - {fileID: 676953754010817208}
   - {fileID: 496943499}
   m_Father: {fileID: 5007216166005259689}
-  m_LocalEulerAnglesHint: {x: 23, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2129575927327998779
 GameObject:
   m_ObjectHideFlags: 0

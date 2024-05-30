@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public class testGame : MonoBehaviour
 {
+    public ConnectionManager ConnectionManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class testGame : MonoBehaviour
         // Kiểm tra nếu phím "M" được nhấn xuống
         if (Input.GetKeyDown(KeyCode.A))
         {
-            ObjectPoolManager.Instance.SpawnFromPool("pistolbullet",transform.position);
+            ConnectionManager.JoinRoom();
         }
     }
 }

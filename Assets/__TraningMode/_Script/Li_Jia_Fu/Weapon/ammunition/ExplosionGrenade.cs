@@ -51,9 +51,8 @@ public class ExplosionGrenade : MonoBehaviour
         {
             if (hitCollider.CompareTag("target"))
             {
-                Animator anim = hitCollider.transform.gameObject.GetComponent<watermelonTarget>().anim;
-                anim.SetTrigger("hit");
-                TraningMissionUI.Instance.ShowMissionProgress(999,1);
+                DummyTarget dummy = hitCollider.GetComponent<DummyTarget>();
+                dummy.GrenadeCollider();
             }
         }
     }

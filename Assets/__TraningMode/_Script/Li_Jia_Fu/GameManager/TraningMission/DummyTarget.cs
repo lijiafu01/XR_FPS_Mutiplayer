@@ -88,7 +88,10 @@ public class DummyTarget : MonoBehaviour
             StartCoroutine(WaitForAnimation("hit"));
         }
     }
-  
+    public void GrenadeCollider()
+    {
+        StartCoroutine(WaitForAnimation("hit"));
+    }
 
     IEnumerator WaitForAnimation(string stateName)
     {
