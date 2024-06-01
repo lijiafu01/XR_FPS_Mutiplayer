@@ -5,19 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/__TraningMode/_Script/Li_Jia_Fu/Test/testFusion/StartGame.unity
     guid: 351767545914e444f80ea5681a72a03a
-  - enabled: 0
+  - enabled: 1
     path: Assets/__TraningMode/_Script/Li_Jia_Fu/Test/testFusion/MainGame.unity
     guid: 207c1ca76a9ea8f41b356e75317010d2
   - enabled: 0
     path: Assets/__MultiplayerMode/Test/TestFusion.unity
     guid: aca496cec9880924fa6ab6d1381e4ad7
-  - enabled: 1
+  - enabled: 0
     path: Assets/__TraningMode/_Scenes/TraningSettingRoom.unity
     guid: 07a22037afce4424aa3009326455f754
-  - enabled: 1
+  - enabled: 0
     path: Assets/__TraningMode/_Scenes/TraningWeaponMode.unity
     guid: ffa9f4309ad1cfa44876c9d37747e8c9
   m_configObjects:
