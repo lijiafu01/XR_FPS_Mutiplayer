@@ -1,0 +1,318 @@
+fileFormatVersion: 2
+guid: 814e4150037ea1146a3e9f953bfc78a1
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: floor
+    100004: grill
+    100006: grill2
+    100008: Props
+    100010: props
+    100012: props_1
+    100014: props_10
+    100016: props_11
+    100018: props_12
+    100020: props_13
+    100022: props_14
+    100024: props_15
+    100026: props_16
+    100028: props_17
+    100030: props_18
+    100032: props_19
+    100034: props_2
+    100036: props_3
+    100038: props_4
+    100040: props_5
+    100042: props_6
+    100044: props_7
+    100046: props_8
+    100048: props_9
+    100050: roof
+    100052: silver_metal
+    100054: walls
+    100056: yellow_metal
+    400000: //RootNode
+    400002: floor
+    400004: grill
+    400006: grill2
+    400008: Props
+    400010: props
+    400012: props_1
+    400014: props_10
+    400016: props_11
+    400018: props_12
+    400020: props_13
+    400022: props_14
+    400024: props_15
+    400026: props_16
+    400028: props_17
+    400030: props_18
+    400032: props_19
+    400034: props_2
+    400036: props_3
+    400038: props_4
+    400040: props_5
+    400042: props_6
+    400044: props_7
+    400046: props_8
+    400048: props_9
+    400050: roof
+    400052: silver_metal
+    400054: walls
+    400056: yellow_metal
+    2100000: wall
+    2100002: Tex_0035_0_dds
+    2100004: props
+    2100006: Tex_0014_0_dds
+    2100008: Tex_0062_0_dds
+    2100010: Tex_0071_0_dds
+    2100012: Tex_0080_0_dds
+    2100014: pillars
+    2100016: Tex_0040_0_dds
+    2100018: windows
+    2100020: Tex_0013_0_dds
+    2100022: doors
+    2100024: floor
+    2100026: metalyelloow
+    2100028: metal_silver
+    2100030: metalgrill
+    2100032: metalgrill2
+    2100034: roof
+    2100036: lights
+    2300000: //RootNode
+    2300002: floor
+    2300004: grill
+    2300006: grill2
+    2300008: props
+    2300010: props_1
+    2300012: props_10
+    2300014: props_11
+    2300016: props_12
+    2300018: props_13
+    2300020: props_14
+    2300022: props_15
+    2300024: props_16
+    2300026: props_17
+    2300028: props_18
+    2300030: props_19
+    2300032: props_2
+    2300034: props_3
+    2300036: props_4
+    2300038: props_5
+    2300040: props_6
+    2300042: props_7
+    2300044: props_8
+    2300046: props_9
+    2300048: roof
+    2300050: silver_metal
+    2300052: walls
+    2300054: yellow_metal
+    3300000: //RootNode
+    3300002: floor
+    3300004: grill
+    3300006: grill2
+    3300008: props
+    3300010: props_1
+    3300012: props_10
+    3300014: props_11
+    3300016: props_12
+    3300018: props_13
+    3300020: props_14
+    3300022: props_15
+    3300024: props_16
+    3300026: props_17
+    3300028: props_18
+    3300030: props_19
+    3300032: props_2
+    3300034: props_3
+    3300036: props_4
+    3300038: props_5
+    3300040: props_6
+    3300042: props_7
+    3300044: props_8
+    3300046: props_9
+    3300048: roof
+    3300050: silver_metal
+    3300052: walls
+    3300054: yellow_metal
+    4300000: garage
+    4300002: roof
+    4300004: grill2
+    4300006: grill
+    4300008: silver_metal
+    4300010: yellow_metal
+    4300012: props
+    4300014: props_19
+    4300016: props_18
+    4300018: props_17
+    4300020: props_16
+    4300022: props_15
+    4300024: props_14
+    4300026: props_13
+    4300028: props_12
+    4300030: props_11
+    4300032: props_10
+    4300034: props_9
+    4300036: props_8
+    4300038: props_7
+    4300040: props_6
+    4300042: props_5
+    4300044: props_4
+    4300046: props_3
+    4300048: props_2
+    4300050: props_1
+    4300052: floor
+    4300054: walls
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: doors
+    second: {fileID: 2100000, guid: f5350b3f5097d2f49b54d7c611415871, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor
+    second: {fileID: 2100000, guid: 8c30ae03bebb1844e8632e7c1b309a05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: garage
+    second: {fileID: 2100000, guid: 51db8e1b828ba8946a8021fc5292a2bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights
+    second: {fileID: 2100000, guid: 3f618d1817a00c34e972e97ed237629b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal_silver
+    second: {fileID: 2100000, guid: 19fed6c528e1cf047b5e07c10242c4e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalgrill
+    second: {fileID: 2100000, guid: ea69b743c6e315f4d9a85eecdb64ba01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalgrill2
+    second: {fileID: 2100000, guid: 18d78d8244b127e429e4a27d23ebf1be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalyelloow
+    second: {fileID: 2100000, guid: 95dfefef4eec7614abfb524c9fb388a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pillars
+    second: {fileID: 2100000, guid: 08a7066f0749e3644a6104dc36118930, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: props
+    second: {fileID: 2100000, guid: 5969960036d4bcb4baff07b6db006854, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: roof
+    second: {fileID: 2100000, guid: cb31e34bb8b92f944b008a2a53d6ce75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall
+    second: {fileID: 2100000, guid: c460a482a4ccabf439d47642639120ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windows
+    second: {fileID: 2100000, guid: 819b65e4c2707b6429ddbba9f44a5564, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
