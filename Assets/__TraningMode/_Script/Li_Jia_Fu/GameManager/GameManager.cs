@@ -5,6 +5,7 @@ using TraningMode;
 public class GameManager : MonoBehaviour
 {
     public WeaponType playerChooseWeapon;
+    public bool isRun = false;
     public static GameManager Instance { get; private set; }
     private void Awake()
     { 

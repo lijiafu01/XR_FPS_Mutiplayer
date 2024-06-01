@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: 497e264877f93e54aaef6d9ad65d57c9
 NativeFormatImporter:
@@ -6,3 +7,13 @@ NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: 497e264877f93e54aaef6d9ad65d57c9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> 3544eb55e325b052f08bb5c6ae904a42b06e3225

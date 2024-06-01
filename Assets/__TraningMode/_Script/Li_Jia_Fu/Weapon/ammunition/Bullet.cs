@@ -4,7 +4,6 @@ using UnityEngine;
 using TraningMode;
 public class Bullet : MonoBehaviour
 {
-    
     private void OnEnable()
     {
         Invoke("ReturnObjectPool", 5f);

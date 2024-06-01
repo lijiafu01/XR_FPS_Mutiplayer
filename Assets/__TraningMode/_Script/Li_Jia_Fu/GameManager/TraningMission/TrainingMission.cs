@@ -30,7 +30,6 @@ public class TrainingMission : MonoBehaviour
         isActive = true;
         gameObject.SetActive(true);
         TraningMissionUI.Instance.trainerUI.UpdateCurrentMission(missionId, true);
-        Debug.Log($"Mission {missionId} started.");
     }
 
     public void CompleteMission()

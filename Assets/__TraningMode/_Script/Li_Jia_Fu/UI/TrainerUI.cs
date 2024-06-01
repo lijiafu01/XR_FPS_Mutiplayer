@@ -34,9 +34,7 @@ public class TrainerUI : MonoBehaviour
         currentMissionIndex = missions.FindIndex(m => m.id == currentMissionId);
         if (isMissionStarting)
         {
-            Debug.Log($"dev nhiem vu khoi dau nhie vu: {currentMissionId}");
             //isMissionStarting = true;
-            Debug.Log($"dev nhiem vu khoi dau nhiem vu: {currentMissionId}, {currentMissionIndex}");
             if (currentMissionIndex != -1)
             {
                 isDialogContent = missions[currentMissionIndex].startDialogues != null && missions[currentMissionIndex].startDialogues.Count > 0;
@@ -45,34 +43,28 @@ public class TrainerUI : MonoBehaviour
         }
         else
         {
-            Debug.Log($"dev nhiem vu ket thuc nhiem vu: {currentMissionId}");
             //isMissionStarting = false;
             // Check if there is any dialogue content at the end of the mission
-            Debug.Log($"dev nhiem vu ket thuc nhiem vu: {currentMissionId}, {currentMissionIndex}");
             if (currentMissionIndex != -1)
             {
-                Debug.Log($"dev nhiem vu ket thuc nhiem vu ???: {currentMissionId}, {currentMissionIndex}");
                 isDialogContent = missions[currentMissionIndex].endDialogues != null && missions[currentMissionIndex].endDialogues.Count > 0;
+                GameManager.Instance.isRun = false;
             }
                 
         }
-        Debug.Log($"dev check run 111");
         _currentMissionId = currentMissionId;
         if (currentMissionIndex != -1 && isDialogContent)
         {
-            Debug.Log($"dev nhiem vu conten  nhiem vu: {currentMissionId}");
             currentDialogueIndex = 0;
             trainer.SetActive(true);
             UpdateDialogueText();
         }
         else//không có hội thoại 
         {
-            Debug.Log($"dev nhiem vu ko content nhiem vu: {currentMissionId}");
             if (isMissionStarting) return;
             
             TrainingMissionManager.Instance.WeaponTraining.CompleteMission(_currentMissionId);
         }
-        Debug.Log($"dev check run 222");
     }
 
     public void NextContent()
@@ -93,6 +85,7 @@ public class TrainerUI : MonoBehaviour
                 // If it was the start phase, we might need to auto-start the end dialogues or wait for event
                 currentDialogueIndex = 0;
                 trainer.SetActive(false);
+                GameManager.Instance.isRun = true;
             }
             else
             {
@@ -100,6 +93,7 @@ public class TrainerUI : MonoBehaviour
                 TrainingMissionManager.Instance.WeaponTraining.CompleteMission(_currentMissionId);
                 trainer.SetActive(false);
                 _currentMissionId = -1; // Reset mission ID
+                GameManager.Instance.isRun = true;
 
             }
         }

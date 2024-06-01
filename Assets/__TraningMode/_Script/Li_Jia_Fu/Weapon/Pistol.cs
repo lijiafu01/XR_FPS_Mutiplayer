@@ -8,8 +8,8 @@ public class Pistol : WeaponBehaviour
     [SerializeField] private Transform muzzle;
     [SerializeField] private float shootForce = 800f;
     [SerializeField] private GameObject bulletPrefab;
-
-
+    [SerializeField] private AudioSource shootSound;  // AudioSource for shooting the pistol
+    [SerializeField] private Animator Anim;
     protected override void Awake()
     {
 
@@ -29,7 +29,9 @@ public class Pistol : WeaponBehaviour
     }
     public override void Fire()
     {
+        
         if (!InputManager.Instance.GetTriggerPressed()) return;
+        if (!GameManager.Instance.isRun) return;
         if (Time.time >= nextFireTime)
         {
             //GameObject bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
@@ -41,7 +43,8 @@ public class Pistol : WeaponBehaviour
             nextFireTime = Time.time + 1f / fireRate; // Cập nhật thời gian bắn tiếp theo dựa trên fireRate
 
             GameObject hitVFXInstance = ObjectPoolManager.Instance.SpawnFromPool("pistolmuzzleflash", muzzle.position, muzzle.rotation);
-
+            shootSound.Play();
+            Anim.SetTrigger("shoot");
             // Tìm và kích hoạt ParticleSystem trên bản sao hitVFX
             ParticleSystem ps = hitVFXInstance.GetComponent<ParticleSystem>();
             if (ps != null)

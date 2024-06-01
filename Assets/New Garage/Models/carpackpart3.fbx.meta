@@ -1,0 +1,438 @@
+fileFormatVersion: 2
+guid: d4b5648c1cad9d346b43e1344aeb7878
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: body_10
+    100002: BODY_3
+    100004: BODY_4
+    100006: body_8
+    100008: body_9
+    100010: car12
+    100012: car13
+    100014: car15
+    100016: car16
+    100018: car17
+    100020: //RootNode
+    100022: Null_10
+    100024: Null_8
+    100026: Null_9
+    100028: T1_5
+    100030: T1_6
+    100032: T2_5
+    100034: T2_6
+    100036: T3_5
+    100038: T3_6
+    100040: T4_5
+    100042: T4_6
+    100044: TIRES_10
+    100046: tires_1_7
+    100048: tires_1_8
+    100050: tires_1_9
+    100052: tires_2_10
+    100054: tires_2_11
+    100056: tires_2_9
+    100058: tires_3_10
+    100060: tires_3_8
+    100062: tires_3_9
+    100064: tires_7
+    100066: tires_8
+    100068: TIRES_9
+    100070: tires_9
+    400000: body_10
+    400002: BODY_3
+    400004: BODY_4
+    400006: body_8
+    400008: body_9
+    400010: car12
+    400012: car13
+    400014: car15
+    400016: car16
+    400018: car17
+    400020: //RootNode
+    400022: Null_10
+    400024: Null_8
+    400026: Null_9
+    400028: T1_5
+    400030: T1_6
+    400032: T2_5
+    400034: T2_6
+    400036: T3_5
+    400038: T3_6
+    400040: T4_5
+    400042: T4_6
+    400044: TIRES_10
+    400046: tires_1_7
+    400048: tires_1_8
+    400050: tires_1_9
+    400052: tires_2_10
+    400054: tires_2_11
+    400056: tires_2_9
+    400058: tires_3_10
+    400060: tires_3_8
+    400062: tires_3_9
+    400064: tires_7
+    400066: tires_8
+    400068: TIRES_9
+    400070: tires_9
+    2100000: car12tyre
+    2100002: tire
+    2100004: car12tyre.1
+    2100006: tire.1
+    2100008: car12tyre.2
+    2100010: tire.2
+    2100012: car12tyre.3
+    2100014: tire.3
+    2100016: car12tyre.4
+    2100018: GLASS
+    2100020: car12body
+    2100022: glass
+    2100024: carbase
+    2100026: car13tyre
+    2100028: tire.4
+    2100030: car13tyre.1
+    2100032: tire.5
+    2100034: car13tyre.2
+    2100036: tire.6
+    2100038: car13tyre.3
+    2100040: tire.7
+    2100042: car13tyre.4
+    2100044: carbase.1
+    2100046: car13body
+    2100048: GLASS.1
+    2100050: glass.1
+    2100052: tire.8
+    2100054: car15tyre
+    2100056: tire.9
+    2100058: glass.2
+    2100060: GLASS.2
+    2100062: car15body
+    2100064: carbase.2
+    2100066: car15tyre.1
+    2100068: tire.10
+    2100070: car15tyre.2
+    2100072: tire.11
+    2100074: car15tyre.3
+    2100076: tire.12
+    2100078: car15tyre.4
+    2100080: tire.13
+    2100082: No Name
+    2100084: car16tyre
+    2100086: GLASS.3
+    2100088: tire.14
+    2100090: carbase.3
+    2100092: car17body
+    2100094: tire.15
+    2100096: car16tyre.1
+    2100098: tire.16
+    2100100: car16tyre.2
+    2100102: car16tyre.3
+    2100104: tire.17
+    2100106: car16tyre.4
+    2100108: tire.18
+    2100110: car18tyre
+    2100112: carbase.4
+    2100114: car18tyre.1
+    2100116: car17tyre
+    2100118: car18body
+    2100120: GLASS.4
+    2100122: car17tyre.1
+    2100124: tire.19
+    2100126: car17tyre.2
+    2100128: tire.20
+    2100130: car17tyre.3
+    2100132: tire.21
+    2100134: car17tyre.4
+    2100136: tire.22
+    2300000: body_10
+    2300002: BODY_3
+    2300004: BODY_4
+    2300006: body_8
+    2300008: body_9
+    2300010: T1_5
+    2300012: T1_6
+    2300014: T2_5
+    2300016: T2_6
+    2300018: T3_5
+    2300020: T3_6
+    2300022: T4_5
+    2300024: T4_6
+    2300026: tires_1_7
+    2300028: tires_1_8
+    2300030: tires_1_9
+    2300032: tires_2_10
+    2300034: tires_2_11
+    2300036: tires_2_9
+    2300038: tires_3_10
+    2300040: tires_3_8
+    2300042: tires_3_9
+    2300044: tires_7
+    2300046: tires_8
+    2300048: tires_9
+    3300000: body_10
+    3300002: BODY_3
+    3300004: BODY_4
+    3300006: body_8
+    3300008: body_9
+    3300010: T1_5
+    3300012: T1_6
+    3300014: T2_5
+    3300016: T2_6
+    3300018: T3_5
+    3300020: T3_6
+    3300022: T4_5
+    3300024: T4_6
+    3300026: tires_1_7
+    3300028: tires_1_8
+    3300030: tires_1_9
+    3300032: tires_2_10
+    3300034: tires_2_11
+    3300036: tires_2_9
+    3300038: tires_3_10
+    3300040: tires_3_8
+    3300042: tires_3_9
+    3300044: tires_7
+    3300046: tires_8
+    3300048: tires_9
+    4300000: T1_5
+    4300002: T2_5
+    4300004: T3_5
+    4300006: T4_5
+    4300008: BODY_3
+    4300010: T1_6
+    4300012: T2_6
+    4300014: T3_6
+    4300016: T4_6
+    4300018: BODY_4
+    4300020: body_8
+    4300022: tires_7
+    4300024: tires_3_8
+    4300026: tires_2_9
+    4300028: tires_1_7
+    4300030: body_9
+    4300032: tires_8
+    4300034: tires_3_9
+    4300036: tires_2_10
+    4300038: tires_1_8
+    4300040: body_10
+    4300042: tires_9
+    4300044: tires_3_10
+    4300046: tires_2_11
+    4300048: tires_1_9
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GLASS.2
+    second: {fileID: 2100000, guid: 4141c719d456f024a8f97436df77c7ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GLASS.4
+    second: {fileID: 2100000, guid: 4141c719d456f024a8f97436df77c7ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 06bf3abecdd6e974b86a901498def7f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car12body
+    second: {fileID: 2100000, guid: 0e1b7acf162dc854b8c795eaeb5377f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car12tyre
+    second: {fileID: 2100000, guid: 1db456e7cfc955949a387529012435a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car13body
+    second: {fileID: 2100000, guid: 3e56c6d7359945e41bd836dd83f5aa03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car13tyre
+    second: {fileID: 2100000, guid: 9abdc77b5c63b7c4fa38c693b706811d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car15body
+    second: {fileID: 2100000, guid: b8b379fbd900f1f4ebb4fa1471a2ff2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car15tyre
+    second: {fileID: 2100000, guid: 39d39b16bcef2e14e8dd379a580243db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car16tyre
+    second: {fileID: 2100000, guid: 2814f6d462d6fa34cb60b6738ace24a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car17body
+    second: {fileID: 2100000, guid: 2c3cb984b11f01b4993773c9b87b24aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car17tyre
+    second: {fileID: 2100000, guid: 032259ad3bc4f74419c7b3d75d626a9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car18body
+    second: {fileID: 2100000, guid: df8a0044546135a449d814a6dd594f14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car18tyre
+    second: {fileID: 2100000, guid: 6f897795258a84e43b22f1e844bfb6d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carbase
+    second: {fileID: 2100000, guid: 574d6a8857692ef44b17c69f1e5e2b8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carbase.3
+    second: {fileID: 2100000, guid: 574d6a8857692ef44b17c69f1e5e2b8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: 6f7f4a956f8cce94ea31e45c5877a72d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass.2
+    second: {fileID: 2100000, guid: 6f7f4a956f8cce94ea31e45c5877a72d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire
+    second: {fileID: 2100000, guid: 67acc8183da0bb44bb64544a645718c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire.10
+    second: {fileID: 2100000, guid: 67acc8183da0bb44bb64544a645718c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire.11
+    second: {fileID: 2100000, guid: 67acc8183da0bb44bb64544a645718c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire.14
+    second: {fileID: 2100000, guid: 67acc8183da0bb44bb64544a645718c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire.19
+    second: {fileID: 2100000, guid: 67acc8183da0bb44bb64544a645718c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire.20
+    second: {fileID: 2100000, guid: 67acc8183da0bb44bb64544a645718c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire.4
+    second: {fileID: 2100000, guid: 67acc8183da0bb44bb64544a645718c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire.8
+    second: {fileID: 2100000, guid: 67acc8183da0bb44bb64544a645718c9, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,6 +5,7 @@ using UnityEngine;
 using TraningMode;
 public class ExplosionGrenade : MonoBehaviour
 {
+    [SerializeField] private AudioSource audioSource;
     bool ischeck =false;
     public GameObject explosionEffect; // Gán prefab cha chứa ParticleSystem trong Inspector
     private void Start()
@@ -14,6 +15,7 @@ public class ExplosionGrenade : MonoBehaviour
     // Phương thức để kích hoạt vụ nổ
     public void TriggerExplosion()
     {
+        PlaySound();
         // Tạo hiệu ứng tại vị trí của đối tượng này
         GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
         // Kích hoạt tất cả các Particle Systems trong prefab
@@ -22,7 +24,19 @@ public class ExplosionGrenade : MonoBehaviour
             ps.Play();
         }
         ischeck = true;
+        
     }
+    private void PlaySound()
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+            // Hủy GameObject sau khi âm thanh phát xong
+            Destroy(gameObject, audioSource.clip.length);
+        }
+    }
+
+
     private void Update()
     {
         if (!ischeck) return;
@@ -37,12 +51,10 @@ public class ExplosionGrenade : MonoBehaviour
         {
             if (hitCollider.CompareTag("target"))
             {
-                Animator anim = hitCollider.transform.gameObject.GetComponent<watermelonTarget>().anim;
-                anim.SetTrigger("hit");
-                TraningMissionUI.Instance.ShowMissionProgress(999,1);
+                DummyTarget dummy = hitCollider.GetComponent<DummyTarget>();
+                dummy.GrenadeCollider();
             }
         }
-       Destroy(gameObject);
     }
     
 }

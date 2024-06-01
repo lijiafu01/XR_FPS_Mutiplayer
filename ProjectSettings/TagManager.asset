@@ -12,6 +12,7 @@ TagManager:
   - LeftHand
   - BowCenter
   - BowStringHandle
+  - RightHand
   layers:
   - Default
   - TransparentFX

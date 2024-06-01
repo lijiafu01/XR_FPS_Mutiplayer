@@ -10,9 +10,14 @@ public class Bow : WeaponBehaviour
     [SerializeField] private LineRenderer bowString;    // LineRenderer để vẽ dây cung
     [SerializeField] private float maxPullDistance = -0.5f; // Khoảng cách kéo tối đa, giá trị âm
     [SerializeField] private float pullStrengthMultiplier = 1000f; // Nhân số để tính lực bắn dựa trên độ kéo
+
+    [SerializeField] private AudioSource drawSound;    // AudioSource for drawing the bow
+    [SerializeField] private AudioSource shootSound;  // AudioSource for shooting the bow
+
+
     private GameObject currentArrow;
     private bool isStringPulled = false;
-    private Transform leftHand;                        // Vị trí của controller tay trái
+    private Transform RightHand;                        // Vị trí của controller tay trái
     public Transform attackTransform; // Đảm bảo rằng bạn đã gán đúng Transform này trong Unity Editor
     public Transform bowstringCenter;
     protected override void Start()
@@ -22,19 +27,20 @@ public class Bow : WeaponBehaviour
     }
     public override void Fire()
     {
-        if (leftHand != null && OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch))
+        if (RightHand != null && OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.RTouch))
         {
             if (!isStringPulled)
             {
                 CreateArrow();
                 isStringPulled = true;
+                drawSound.Play();  // Play the drawing sound
             }
-
+            
             // Hướng kéo tuyến tính từ bowStringCenter đến attackTransform
             Vector3 pullDirection = (attackTransform.position - bowstringCenter.position).normalized;
 
             // Khoảng cách từ tay đến bowStringCenter
-            float handDistance = Vector3.Distance(leftHand.position, bowstringCenter.position);
+            float handDistance = Vector3.Distance(RightHand.position, bowstringCenter.position);
 
             // Đảo ngược hướng kéo để phù hợp với cách thực tế kéo dây cung
             // Giảm khoảng cách kéo nếu vượt quá giới hạn cho phép
@@ -51,9 +57,10 @@ public class Bow : WeaponBehaviour
         }
         else if (isStringPulled)
         {
+            drawSound.Stop();
             ShootArrow();
             isStringPulled = false;
-            leftHand = null;
+            RightHand = null;
         }
         else
         {
@@ -81,18 +88,18 @@ public class Bow : WeaponBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("LeftHand"))
+        if (other.CompareTag("RightHand"))
         {
-            leftHand = other.transform;
+            RightHand = other.transform;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("LeftHand"))
+        if (other.CompareTag("RightHand"))
         {
             isStringPulled = false;
-            leftHand = null;
+            RightHand = null;
         }
     }
     private void ShootArrow()
@@ -104,6 +111,7 @@ public class Bow : WeaponBehaviour
             float pullDistance = Mathf.Abs(bowHandle.position.z - bowstringCenter.position.z);
             rb.AddForce(transform.forward * pullDistance * pullStrengthMultiplier);
             currentArrow = null;
+            shootSound.Play();  // Play the shooting sound
             //Invoke("SetBowCollider", 0.05f);          
             
         }
