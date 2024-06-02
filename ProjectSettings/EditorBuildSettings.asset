@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/__TraningMode/_Script/Li_Jia_Fu/Test/testFusion/StartGame.unity
-    guid: 351767545914e444f80ea5681a72a03a
-  - enabled: 1
-    path: Assets/__TraningMode/_Script/Li_Jia_Fu/Test/testFusion/MainGame.unity
-    guid: 207c1ca76a9ea8f41b356e75317010d2
   - enabled: 0
+    path: Assets/__TraningMode/_Script/Li_Jia_Fu/Test/testFusion/StartGame.unity
+    guid: ecbc84c2fbfe6cc4db21a02310713141
+  - enabled: 0
+    path: Assets/__TraningMode/_Script/Li_Jia_Fu/Test/testFusion/MainGame.unity
+    guid: a1671a6025196594b874314e914e9b44
+  - enabled: 1
     path: Assets/__MultiplayerMode/Test/TestFusion.unity
     guid: aca496cec9880924fa6ab6d1381e4ad7
   - enabled: 0
@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/__TraningMode/_Scenes/TraningWeaponMode.unity
     guid: ffa9f4309ad1cfa44876c9d37747e8c9
+  - enabled: 0
+    path: Assets/__TraningMode/_Script/Li_Jia_Fu/Test/testFusion/a.unity
+    guid: 351767545914e444f80ea5681a72a03a
+  - enabled: 0
+    path: Assets/__TraningMode/_Script/Li_Jia_Fu/Test/testFusion/b.unity
+    guid: 207c1ca76a9ea8f41b356e75317010d2
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3cd6c16a1754c09448c63b7dad84878d, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6eb9f9bc081967a4fac2448c39cf6dcc, type: 2}

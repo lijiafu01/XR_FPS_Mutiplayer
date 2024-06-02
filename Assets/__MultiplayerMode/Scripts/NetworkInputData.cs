@@ -1,7 +1,17 @@
 using Fusion;
 using UnityEngine;
-
-public struct NetworkInputData : INetworkInput
+namespace multiplayer
 {
-    public Vector3 direction;
+public enum InputButton
+{
+    Jump
+}
+
+public struct InputData : INetworkInput
+{
+    public NetworkButtons Button;
+    public Vector2 MoveInput;
+    public Angle Pitch;
+    public Angle Yaw;
+}
 }
