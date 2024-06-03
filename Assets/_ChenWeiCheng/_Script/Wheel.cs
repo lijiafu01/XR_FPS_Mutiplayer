@@ -1,21 +1,50 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Wheel : MonoBehaviour
 {
-    bool canCollider = true;
-    private void OnTriggerEnter(Collider other)
+    public Transform rightController; // Tham chiếu tới controller bên phải
+    private Rigidbody tireRigidbody;
+    private bool isGripping = false;
+    private bool isCollidingWithTire = false;
+
+    void Start()
     {
-        Debug.Log("dev_is collider 1");
-        if (other.tag == "controller" && canCollider)
+        // Lấy tham chiếu tới Rigidbody của lốp xe
+        tireRigidbody = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        // Kiểm tra nếu nút grip phải đang được nhấn
+        isGripping = OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.RTouch);
+
+        if (isGripping && isCollidingWithTire)
         {
-            Debug.Log("dev_is collider 2");
-            // Đặt đối tượng là con của controller để giữ vị trí tương đối
-            transform.SetParent(other.transform);
-            // Đặt lại vị trí của đối tượng tới vị trí ban đầu trong hệ toạ độ cục bộ của controller
-            transform.localPosition = Vector3.zero;
-            canCollider = false;
+            // Thiết lập lốp xe là con của controller và vô hiệu hóa vật lý
+            transform.SetParent(rightController);
+            tireRigidbody.isKinematic = true;
+        }
+        else if (!isGripping && transform.parent == rightController)
+        {
+            // Đặt lại parent của lốp xe về null (tầng cao nhất) và kích hoạt vật lý
+            transform.SetParent(null);
+            tireRigidbody.isKinematic = false;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.transform == rightController)
+        {
+            isCollidingWithTire = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.transform == rightController)
+        {
+            isCollidingWithTire = false;
         }
     }
 }

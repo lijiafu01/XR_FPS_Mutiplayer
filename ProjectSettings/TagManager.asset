@@ -13,6 +13,9 @@ TagManager:
   - BowCenter
   - BowStringHandle
   - RightHand
+  - SamplesInfoPanel
+  - controller
+  - NewWheel
   layers:
   - Default
   - TransparentFX
