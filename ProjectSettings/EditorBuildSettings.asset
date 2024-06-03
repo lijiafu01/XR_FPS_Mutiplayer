@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/__TraningMode/_Script/Li_Jia_Fu/Test/testFusion/StartGame.unity
     guid: ecbc84c2fbfe6cc4db21a02310713141
-  - enabled: 0
+  - enabled: 1
     path: Assets/__TraningMode/_Script/Li_Jia_Fu/Test/testFusion/MainGame.unity
     guid: a1671a6025196594b874314e914e9b44
-  - enabled: 1
+  - enabled: 0
     path: Assets/__MultiplayerMode/Test/TestFusion.unity
     guid: aca496cec9880924fa6ab6d1381e4ad7
   - enabled: 0
