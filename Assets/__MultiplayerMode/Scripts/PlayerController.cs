@@ -19,7 +19,7 @@ public class PlayerController : NetworkBehaviour
     [Networked]
     private NetworkButtons _previousButton { get; set; }
 
-    public override void Spawned()
+    /*public override void Spawned()
     {
         if (Object.HasInputAuthority)
         {
@@ -36,33 +36,35 @@ public class PlayerController : NetworkBehaviour
             _camera.enabled = false;
             _camera.GetComponent<AudioListener>().enabled = false;
         }
-    }
+    }*/
 
     public override void FixedUpdateNetwork()
     {
         if (GetInput(out InputData data))
         {
-            var buttonPressed = data.Button.GetPressed(_previousButton);
-            _previousButton = data.Button;
+                var moveInput = new Vector3(data.MoveInput.x, 0, data.MoveInput.y);
+                _characterController.Move( moveInput * _speed * Runner.DeltaTime);
+                /*var buttonPressed = data.Button.GetPressed(_previousButton);
+                _previousButton = data.Button;
 
-            var moveInput = new Vector3(data.MoveInput.x, 0, data.MoveInput.y);
-            _characterController.Move(transform.rotation * moveInput * _speed * Runner.DeltaTime);
+                var moveInput = new Vector3(data.MoveInput.x, 0, data.MoveInput.y);
+                _characterController.Move(transform.rotation * moveInput * _speed * Runner.DeltaTime);
 
-            HandlePitchYaw(data);
+                HandlePitchYaw(data);
 
-            if (buttonPressed.IsSet(InputButton.Jump))
-            {
-                _characterController.Jump();
+                if (buttonPressed.IsSet(InputButton.Jump))
+                {
+                    _characterController.Jump();
+                }*/
             }
-        }
 
-        transform.rotation = Quaternion.Euler(0, (float)_yaw, 0);
+        //transform.rotation = Quaternion.Euler(0, (float)_yaw, 0);
 
         //var cameraEulerAngle = _camera.transform.localRotation.eulerAngles;
         //_camera.transform.rotation = Quaternion.Euler((float)_pitch, cameraEulerAngle.y, cameraEulerAngle.z);
     }
 
-    private void HandlePitchYaw(InputData data)
+    /*private void HandlePitchYaw(InputData data)
     {
         _yaw += data.Yaw;
         _pitch += data.Pitch;
@@ -75,6 +77,6 @@ public class PlayerController : NetworkBehaviour
         {
             _pitch = 89;
         }
-    }
+    }*/
 }
 }

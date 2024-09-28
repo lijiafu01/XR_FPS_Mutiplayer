@@ -8,8 +8,8 @@ namespace multiplayer
 {
 public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
 {
-    [SerializeField]
-    private float _mouseSensitivity = 10f;
+    /*[SerializeField]
+    private float _mouseSensitivity = 10f;*/
 
     [SerializeField]
     private NetworkRunner _networkRunner = null;
@@ -19,9 +19,9 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
 
     private Dictionary<PlayerRef, NetworkObject> _playerList = new Dictionary<PlayerRef, NetworkObject>();
 
-    private void Start()
+     private void Start()
     {
-        StartGame();
+       StartGame();
     }
 
     private async void StartGame()
@@ -39,39 +39,51 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
-        Vector3 spawnPoint = new Vector3(0, 2, 0);
-        NetworkObject networkPlayerObject = runner.Spawn(_playerPrefab, spawnPoint, Quaternion.identity, player);
+            Vector3 spawnPoint = new Vector3(0, 2, 0);
+            NetworkObject networkPlayerObject = runner.Spawn(_playerPrefab, spawnPoint, Quaternion.identity, player);
 
-        _playerList.Add(player, networkPlayerObject);
-    }
+            _playerList.Add(player, networkPlayerObject);
+        }
 
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
     {
-        if (_playerList.TryGetValue(player, out var networkObject))
-        {
-            runner.Despawn(networkObject);
-            _playerList.Remove(player);
+            if (_playerList.TryGetValue(player, out var networkObject))
+            {
+                runner.Despawn(networkObject);
+                _playerList.Remove(player);
+            }
         }
-    }
 
-    public void OnInput(NetworkRunner runner, NetworkInput input)
-    {
-        var inputData = new InputData();
+        /*public void OnInput(NetworkRunner runner, NetworkInput input)
+        {
+            var inputData = new InputData();
 
-        if (Input.GetKey(KeyCode.W)) { inputData.MoveInput += Vector2.up; }
-        if (Input.GetKey(KeyCode.S)) { inputData.MoveInput += Vector2.down; }
-        if (Input.GetKey(KeyCode.A)) { inputData.MoveInput += Vector2.left; }
-        if (Input.GetKey(KeyCode.D)) { inputData.MoveInput += Vector2.right; }
+            if (Input.GetKey(KeyCode.W)) { inputData.MoveInput += Vector2.up; }
+            if (Input.GetKey(KeyCode.S)) { inputData.MoveInput += Vector2.down; }
+            if (Input.GetKey(KeyCode.A)) { inputData.MoveInput += Vector2.left; }
+            if (Input.GetKey(KeyCode.D)) { inputData.MoveInput += Vector2.right; }
 
-        inputData.Pitch = Input.GetAxis("Mouse Y") * _mouseSensitivity * (-1);
-        inputData.Yaw = Input.GetAxis("Mouse X") * _mouseSensitivity;
+            input.Set(inputData);
+        }*/
+        /*     inputData.Pitch = Input.GetAxis("Mouse Y") * _mouseSensitivity* (-1);
+                 inputData.Yaw = Input.GetAxis("Mouse X") * _mouseSensitivity;
 
-        inputData.Button.Set(InputButton.Jump, Input.GetKey(KeyCode.Space));
+                 inputData.Button.Set(InputButton.Jump, Input.GetKey(KeyCode.Space));*/
+        public void OnInput(NetworkRunner runner, NetworkInput input)
+        {
+            var inputData = new InputData();
 
-        input.Set(inputData);
-    }
+            // Lấy dữ liệu từ joystick trái trên bộ điều khiển Oculus
+            Vector2 primaryThumbstick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
 
-    public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)
+            inputData.MoveInput = primaryThumbstick;
+
+            input.Set(inputData);
+        }
+
+
+
+        public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)
     {
     }
 
